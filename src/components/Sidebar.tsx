@@ -154,7 +154,7 @@ const TechnicalSkillsSection: React.FC = () => {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow"
+            className="glass p-3 sm:p-4 rounded-xl hover-lift card-3d"
           >
             <span className="font-medium text-slate-800 text-xs sm:text-sm">
               {skill}

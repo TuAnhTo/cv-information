@@ -4,6 +4,42 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Enhanced Custom animations with 2025 modern effects */
+
+/* Progressive blur animation */
+@keyframes progressiveBlur {
+  0% {
+    backdrop-filter: blur(0px);
+  }
+  100% {
+    backdrop-filter: blur(20px);
+  }
+}
+
+/* Modern morphing effect */
+@keyframes morphing {
+  0%, 100% {
+    border-radius: 1rem;
+    transform: scale(1);
+  }
+  50% {
+    border-radius: 2rem;
+    transform: scale(1.02);
+  }
+}
+
+/* Breathing effect for better user engagement */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+}
+
 /* Custom animations */
 @keyframes fadeIn {
   from {
@@ -76,11 +112,12 @@
   }
 }
 
-/* Glass morphism effect */
+/* Enhanced Glass morphism effect with modern 2025 trends */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .glass-dark {
@@ -130,14 +167,15 @@
   border-radius: 10px;
 }
 
-/* Interactive hover effects */
+/* Enhanced Interactive hover effects with modern micro-interactions */
 .hover-lift {
-  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease-out, backdrop-filter 0.3s ease;
 }
 
 .hover-lift:hover {
-  transform: translateY(-5px) scale(1.015);
-  box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.08), 0 8px 8px -5px rgba(0, 0, 0, 0.03);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.12), 0 10px 10px -5px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(30px) saturate(200%);
 }
 
 /* 3D card effect */
@@ -179,6 +217,114 @@
   animation: bounceSubtle 1.8s ease-out infinite;
 }
 
+/* 2025 Modern animation classes */
+.animate-progressive-blur {
+  animation: progressiveBlur 0.8s ease-out;
+}
+
+.animate-morphing {
+  animation: morphing 4s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+/* Bento grid system for 2025 trends */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  grid-auto-rows: minmax(200px, auto);
+}
+
+.bento-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Modern skeuomorphism */
+.neu-card {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  box-shadow: 
+    20px 20px 40px #d1d1d1,
+    -20px -20px 40px #ffffff,
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+}
+
+.neu-card:hover {
+  box-shadow: 
+    25px 25px 50px #d1d1d1,
+    -25px -25px 50px #ffffff,
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* AI-inspired gradient animations */
+.ai-gradient {
+  background: linear-gradient(
+    45deg,
+    #667eea,
+    #764ba2,
+    #f093fb,
+    #f5576c,
+    #4facfe,
+    #00f2fe
+  );
+  background-size: 400% 400%;
+  animation: aiGradient 8s ease infinite;
+}
+
+@keyframes aiGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Enhanced interaction states */
+.interactive-element {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-element::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.interactive-element:hover::before {
+  left: 100%;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', 'ui-sans-serif', 'system-ui', sans-serif;
@@ -195,18 +341,35 @@ body {
   will-change: transform, opacity;
 }
 
-/* Mobile optimizations */
+/* Enhanced Mobile optimizations for 2025 */
 @media (max-width: 768px) {
-  .animate-shimmer {
+  .animate-shimmer,
+  .animate-morphing,
+  .ai-gradient {
     animation: none !important;
   }
 
   .backdrop-blur-xl {
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(8px);
   }
 
   .glass {
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .neu-card {
+    box-shadow: 
+      10px 10px 20px #d1d1d1,
+      -10px -10px 20px #ffffff;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-3px) scale(1.01);
   }
 }
 

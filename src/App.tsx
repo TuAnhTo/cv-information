@@ -34,15 +34,15 @@ function App() {
       <motion.div
         initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
         animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="relative w-full mx-auto my-4 md:my-8 bg-white/80 backdrop-blur-xl shadow-2xl rounded-xl md:rounded-3xl overflow-hidden border border-white/20 px-2 md:px-6 lg:px-8"
+        transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+        className="relative w-full mx-auto my-4 md:my-8 neu-card bg-white/85 backdrop-blur-xl shadow-2xl rounded-2xl md:rounded-3xl overflow-hidden border border-white/25 px-2 md:px-6 lg:px-8 interactive-element"
         style={{
           willChange: prefersReducedMotion ? "auto" : "transform",
           transform: "translate3d(0,0,0)", // Force GPU acceleration
         }}
       >
-        {/* Static gradient border - no animation */}
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-400 opacity-20 pointer-events-none" />
+        {/* Enhanced AI-inspired gradient with modern animation */}
+        <div className="absolute inset-0 ai-gradient opacity-15 pointer-events-none" />
 
         {/* Header Section */}
         <Header />
@@ -60,7 +60,7 @@ function App() {
             />
           </div>
 
-          {/* Grid Container */}
+          {/* Grid Container with modern styling */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 relative z-10">
             {/* Left Sidebar */}
             <motion.div

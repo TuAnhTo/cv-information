@@ -59,7 +59,7 @@ const KeyAchievements: React.FC = () => {
         Key Achievements
       </h2>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+      <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
         {achievements.map((achievement, index) => (
           <AchievementCard key={index} achievement={achievement} />
         ))}
@@ -73,23 +73,23 @@ const AchievementCard: React.FC<{ achievement: Achievement }> = ({
 }) => {
   return (
     <div
-      className={`glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border-l-4 ${achievement.color} shadow-lg hover-lift card-3d animate-fade-in`}
+      className={`glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border-l-4 ${achievement.color} shadow-lg hover-lift card-3d animate-fade-in min-h-[280px] flex flex-col`}
     >
-      <div className="flex items-center mb-3 sm:mb-4">
+      <div className="flex items-start mb-3 sm:mb-4">
         <i
-          className={`${achievement.icon} ${achievement.iconColor} text-2xl sm:text-3xl mr-3 sm:mr-4 animate-pulse`}
+          className={`${achievement.icon} ${achievement.iconColor} text-2xl sm:text-3xl mr-3 sm:mr-4 animate-pulse flex-shrink-0 mt-1`}
         ></i>
         <h3
-          className="text-lg sm:text-xl font-bold text-slate-900 gradient-text"
+          className="text-base sm:text-lg font-bold text-slate-900 gradient-text leading-tight break-words"
           style={{ fontFamily: "'Space Grotesk', 'Inter', 'system-ui'" }}
         >
           {achievement.title}
         </h3>
       </div>
-      <p className="text-xs sm:text-sm text-slate-600 mb-2 sm:mb-3 font-semibold">
+      <p className="text-xs sm:text-sm text-slate-600 mb-2 sm:mb-3 font-semibold break-words">
         {achievement.subtitle}
       </p>
-      <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+      <p className="text-xs sm:text-sm text-slate-700 leading-relaxed flex-grow break-words">
         {achievement.description}
       </p>
     </div>
