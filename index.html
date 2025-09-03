@@ -169,6 +169,14 @@
             background: linear-gradient(to bottom, #00d9ff, #b084ff, #ff6b9d);
         }
 
+        /* Mobile timeline adjustments */
+        @media (max-width: 640px) {
+            .timeline-line::before {
+                left: 8px;
+                width: 1px;
+            }
+        }
+
         /* Shimmer effect */
         .shimmer {
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
@@ -211,6 +219,31 @@
             background: linear-gradient(135deg, #b084ff, #ff6b9d);
         }
 
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            /* Better touch targets */
+            .hover-lift:hover {
+                transform: translateY(-4px) scale(1.01);
+            }
+            
+            /* Disable some animations on mobile for performance */
+            .animate-glow {
+                animation: none;
+            }
+            
+            /* Reduce blur effects on mobile */
+            .backdrop-blur-xl {
+                backdrop-filter: blur(10px);
+            }
+            
+            /* Hide some decorative elements on very small screens */
+            @media (max-width: 480px) {
+                .animate-float, .animate-pulse-soft {
+                    display: none;
+                }
+            }
+        }
+
         .print-friendly { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
     </style>
 </head>
@@ -219,21 +252,26 @@
     <!-- Background mesh gradient -->
     <div class="fixed inset-0 bg-mesh-gradient opacity-30 pointer-events-none"></div>
     
-    <div class="relative max-w-6xl mx-auto my-8 bg-white/80 backdrop-blur-xl shadow-2xl rounded-3xl overflow-hidden print:shadow-none print:my-0 print:rounded-none border border-white/20">
+    <div class="relative max-w-6xl mx-auto my-4 md:my-8 bg-white/80 backdrop-blur-xl shadow-2xl rounded-xl md:rounded-3xl overflow-hidden print:shadow-none print:my-0 print:rounded-none border border-white/20 px-2 md:px-0">
+        
+        <!-- Mobile Navigation Toggle -->
+        <button id="mobile-nav-toggle" class="lg:hidden fixed top-4 right-4 z-50 bg-gradient-to-r from-neon-blue to-neon-purple text-white p-3 rounded-full shadow-neon">
+            <i class="fas fa-bars"></i>
+        </button>
         
         <!-- Animated gradient border -->
         <div class="absolute inset-0 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink opacity-20 animate-shimmer pointer-events-none"></div>
         
         <!-- Header Section -->
-        <header class="relative px-12 py-16 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white animate-fade-in overflow-hidden">
+        <header class="relative px-4 sm:px-8 md:px-12 py-8 sm:py-12 md:py-16 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white animate-fade-in overflow-hidden">
             <!-- Animated background elements -->
             <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 rounded-full blur-3xl animate-float"></div>
             <div class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-neon-pink/20 to-neon-orange/20 rounded-full blur-3xl animate-pulse-soft"></div>
             
-            <div class="relative z-10 flex items-center space-x-12 lg:space-x-16">
+            <div class="relative z-10 flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-6 md:space-x-12 lg:space-x-16">
                 <!-- Profile Image with 3D effect -->
-                <div class="relative group">
-                    <div class="w-40 h-40 rounded-full bg-gradient-to-br from-neon-blue to-neon-purple flex items-center justify-center text-white text-5xl font-bold shadow-neon transform group-hover:scale-110 transition-all duration-500 animate-glow card-3d">
+                <div class="relative group flex-shrink-0">
+                    <div class="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-neon-blue to-neon-purple flex items-center justify-center text-white text-3xl sm:text-4xl md:text-5xl font-bold shadow-neon transform group-hover:scale-110 transition-all duration-500 animate-glow card-3d">
                         <i class="fas fa-user relative z-10"></i>
                         <div class="absolute inset-0 rounded-full bg-gradient-to-br from-neon-purple to-neon-pink opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
@@ -243,32 +281,32 @@
                 </div>
                 
                 <!-- Header Info with kinetic typography -->
-                <div class="flex-1 space-y-6">
+                <div class="flex-1 space-y-4 sm:space-y-6 text-center sm:text-left">
                     <div class="animate-kinetic">
-                        <h1 class="text-6xl font-display font-black gradient-text-neon mb-3 tracking-tight animate-fade-in">
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black gradient-text-neon mb-3 tracking-tight animate-fade-in">
                             TO ANH TU
                         </h1>
-                        <div class="text-2xl font-semibold text-neon-blue tracking-wider uppercase animate-slide-in-right">
+                        <div class="text-lg sm:text-xl md:text-2xl font-semibold text-neon-blue tracking-wider uppercase animate-slide-in-right">
                             Backend Developer
                         </div>
                     </div>
                     
-                    <div class="text-lg text-slate-300 leading-relaxed animate-fade-in max-w-2xl">
+                    <div class="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed animate-fade-in max-w-2xl">
                         Seeking dynamic work environment to develop programming skills and knowledge,
                         becoming a professional software engineer with <span class="text-neon-green font-semibold">4+ years</span> of Backend development experience.
                     </div>
                     
                     <!-- Contact Info with glass morphism -->
-                    <div class="flex flex-wrap items-center space-x-8 text-slate-300 animate-slide-in-left">
-                        <div class="flex items-center space-x-3 glass-dark px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-300 group cursor-pointer">
+                    <div class="flex flex-col sm:flex-row flex-wrap items-center gap-3 sm:gap-4 md:gap-8 text-slate-300 animate-slide-in-left">
+                        <div class="flex items-center space-x-3 glass-dark px-3 sm:px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-300 group cursor-pointer text-sm sm:text-base">
                             <i class="fas fa-phone text-neon-blue group-hover:animate-bounce"></i>
                             <span class="font-medium">0966069045</span>
                         </div>
-                        <div class="flex items-center space-x-3 glass-dark px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-300 group cursor-pointer">
+                        <div class="flex items-center space-x-3 glass-dark px-3 sm:px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-300 group cursor-pointer text-sm sm:text-base">
                             <i class="fas fa-envelope text-neon-purple group-hover:animate-bounce"></i>
                             <span class="font-medium">toanhtu.98@gmail.com</span>
                         </div>
-                        <div class="flex items-center space-x-3 glass-dark px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-300 group cursor-pointer">
+                        <div class="flex items-center space-x-3 glass-dark px-3 sm:px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-300 group cursor-pointer text-sm sm:text-base">
                             <i class="fas fa-map-marker-alt text-neon-pink group-hover:animate-bounce"></i>
                             <span class="font-medium">Hanoi, Vietnam</span>
                         </div>
@@ -277,34 +315,34 @@
             </div>
         </header>
 
-        <div class="grid lg:grid-cols-5 min-h-screen relative">
+        <div class="grid lg:grid-cols-5 min-h-screen relative flex-col lg:flex-row">
             <!-- Sidebar with glass morphism -->
-            <aside class="lg:col-span-2 glass p-8 space-y-10 animate-slide-in-left border-r border-white/20">
+            <aside id="sidebar" class="lg:col-span-2 glass p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8 md:space-y-10 animate-slide-in-left border-r border-white/20 order-2 lg:order-1 lg:block">
                 
                 <!-- About Me -->
-                <section class="space-y-4">
-                    <h2 class="text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-blue to-neon-purple pb-3 animate-fade-in">
+                <section class="space-y-3 sm:space-y-4">
+                    <h2 class="text-lg sm:text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-blue to-neon-purple pb-3 animate-fade-in">
                         <i class="fas fa-user-circle text-neon-blue mr-3"></i>
                         About Me
                     </h2>
-                    <p class="text-slate-700 leading-relaxed text-sm animate-fade-in">
+                    <p class="text-slate-700 leading-relaxed text-xs sm:text-sm animate-fade-in">
                         Passionate Backend Developer with expertise in modern web technologies and microservices architecture. 
                         Experienced in building scalable applications and leading development teams across various industries.
                     </p>
                 </section>
 
                 <!-- Education -->
-                <section class="space-y-4">
-                    <h2 class="text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-purple to-neon-pink pb-3">
+                <section class="space-y-3 sm:space-y-4">
+                    <h2 class="text-lg sm:text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-purple to-neon-pink pb-3">
                         <i class="fas fa-graduation-cap text-neon-purple mr-3"></i>
                         Education
                     </h2>
-                    <div class="relative pl-6 border-l-2 border-gradient-to-b from-neon-blue to-neon-purple hover-lift">
-                        <div class="absolute -left-3 top-2 w-6 h-6 bg-gradient-to-br from-neon-blue to-neon-purple rounded-full shadow-neon animate-pulse-soft"></div>
-                        <div class="glass p-4 rounded-xl space-y-2">
-                            <h3 class="font-semibold text-slate-900 text-base">Bachelor of Information Technology</h3>
-                            <p class="text-slate-600 text-sm">Hanoi University of Business and Technology</p>
-                            <span class="inline-block bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-1 rounded-full text-xs font-semibold shadow-neon">
+                    <div class="relative pl-4 sm:pl-6 border-l-2 border-gradient-to-b from-neon-blue to-neon-purple hover-lift">
+                        <div class="absolute -left-2 sm:-left-3 top-2 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-to-br from-neon-blue to-neon-purple rounded-full shadow-neon animate-pulse-soft"></div>
+                        <div class="glass p-3 sm:p-4 rounded-xl space-y-2">
+                            <h3 class="font-semibold text-slate-900 text-sm sm:text-base">Bachelor of Information Technology</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm">Hanoi University of Business and Technology</p>
+                            <span class="inline-block bg-gradient-to-r from-neon-blue to-neon-purple text-white px-3 sm:px-4 py-1 rounded-full text-xs font-semibold shadow-neon">
                                 2017 - 2021
                             </span>
                         </div>
@@ -312,85 +350,85 @@
                 </section>
 
                 <!-- Technical Skills with 3D cards -->
-                <section class="space-y-4">
-                    <h2 class="text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-green to-neon-blue pb-3">
+                <section class="space-y-3 sm:space-y-4">
+                    <h2 class="text-lg sm:text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-green to-neon-blue pb-3">
                         <i class="fas fa-code text-neon-green mr-3"></i>
                         Technical Skills
                     </h2>
-                    <div class="grid grid-cols-1 gap-3">
-                        <div class="glass p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
-                            <span class="font-medium text-slate-800 text-sm">Node.js <span class="text-neon-blue">(4 years)</span></span>
+                    <div class="grid grid-cols-1 gap-2 sm:gap-3">
+                        <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
+                            <span class="font-medium text-slate-800 text-xs sm:text-sm">Node.js <span class="text-neon-blue">(4 years)</span></span>
                         </div>
-                        <div class="glass p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
-                            <span class="font-medium text-slate-800 text-sm">NestJS / Express</span>
+                        <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
+                            <span class="font-medium text-slate-800 text-xs sm:text-sm">NestJS / Express</span>
                         </div>
-                        <div class="glass p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
-                            <span class="font-medium text-slate-800 text-sm">TypeScript</span>
+                        <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
+                            <span class="font-medium text-slate-800 text-xs sm:text-sm">TypeScript</span>
                         </div>
-                        <div class="glass p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
-                            <span class="font-medium text-slate-800 text-sm">PHP <span class="text-neon-purple">(1 year)</span></span>
+                        <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
+                            <span class="font-medium text-slate-800 text-xs sm:text-sm">PHP <span class="text-neon-purple">(1 year)</span></span>
                         </div>
-                        <div class="glass p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
-                            <span class="font-medium text-slate-800 text-sm">React <span class="text-neon-pink">(2 years)</span></span>
+                        <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
+                            <span class="font-medium text-slate-800 text-xs sm:text-sm">React <span class="text-neon-pink">(2 years)</span></span>
                         </div>
-                        <div class="glass p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
-                            <span class="font-medium text-slate-800 text-sm">Vue.js</span>
+                        <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
+                            <span class="font-medium text-slate-800 text-xs sm:text-sm">Vue.js</span>
                         </div>
                     </div>
 
                     <!-- Tech Stack with neon badges -->
-                    <div class="mt-8">
-                        <h3 class="font-semibold text-slate-700 text-sm mb-4 gradient-text">Technologies & Tools</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-gradient-to-r from-orange-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">AWS</span>
-                            <span class="bg-gradient-to-r from-indigo-400 to-indigo-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">GitLab CI/CD</span>
-                            <span class="bg-gradient-to-r from-purple-400 to-purple-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">Redis</span>
-                            <span class="bg-gradient-to-r from-pink-400 to-pink-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">RabbitMQ</span>
-                            <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">Docker</span>
-                            <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">MongoDB</span>
-                            <span class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">MySQL</span>
-                            <span class="bg-gradient-to-r from-purple-400 to-purple-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">Prisma</span>
-                            <span class="bg-gradient-to-r from-red-400 to-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">Socket.io</span>
-                            <span class="bg-gradient-to-r from-indigo-400 to-indigo-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">PM2</span>
+                    <div class="mt-6 sm:mt-8">
+                        <h3 class="font-semibold text-slate-700 text-xs sm:text-sm mb-3 sm:mb-4 gradient-text">Technologies & Tools</h3>
+                        <div class="flex flex-wrap gap-1 sm:gap-2">
+                            <span class="bg-gradient-to-r from-orange-400 to-orange-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">AWS</span>
+                            <span class="bg-gradient-to-r from-indigo-400 to-indigo-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">GitLab CI/CD</span>
+                            <span class="bg-gradient-to-r from-purple-400 to-purple-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">Redis</span>
+                            <span class="bg-gradient-to-r from-pink-400 to-pink-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">RabbitMQ</span>
+                            <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">Docker</span>
+                            <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">MongoDB</span>
+                            <span class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">MySQL</span>
+                            <span class="bg-gradient-to-r from-purple-400 to-purple-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">Prisma</span>
+                            <span class="bg-gradient-to-r from-red-400 to-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">Socket.io</span>
+                            <span class="bg-gradient-to-r from-indigo-400 to-indigo-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">PM2</span>
                         </div>
                     </div>
                 </section>
 
                 <!-- Languages -->
-                <section class="space-y-4">
-                    <h2 class="text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-orange to-neon-pink pb-3">
+                <section class="space-y-3 sm:space-y-4">
+                    <h2 class="text-lg sm:text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-orange to-neon-pink pb-3">
                         <i class="fas fa-language text-neon-orange mr-3"></i>
                         Languages
                     </h2>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center glass p-3 rounded-xl hover-lift">
-                            <span class="font-medium text-slate-800 text-sm">Vietnamese</span>
-                            <span class="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon">Native</span>
+                    <div class="space-y-2 sm:space-y-3">
+                        <div class="flex justify-between items-center glass p-2 sm:p-3 rounded-xl hover-lift">
+                            <span class="font-medium text-slate-800 text-xs sm:text-sm">Vietnamese</span>
+                            <span class="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon">Native</span>
                         </div>
-                        <div class="flex justify-between items-center glass p-3 rounded-xl hover-lift">
-                            <span class="font-medium text-slate-800 text-sm">English</span>
-                            <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon">Intermediate</span>
+                        <div class="flex justify-between items-center glass p-2 sm:p-3 rounded-xl hover-lift">
+                            <span class="font-medium text-slate-800 text-xs sm:text-sm">English</span>
+                            <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon">Intermediate</span>
                         </div>
                     </div>
                 </section>
 
                 <!-- References -->
-                <section class="space-y-4">
-                    <h2 class="text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-green to-neon-blue pb-3">
+                <section class="space-y-3 sm:space-y-4">
+                    <h2 class="text-lg sm:text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-green to-neon-blue pb-3">
                         <i class="fas fa-users text-neon-green mr-3"></i>
                         References
                     </h2>
-                    <div class="space-y-4">
-                        <div class="glass p-4 rounded-xl hover-lift card-3d">
-                            <h4 class="font-semibold text-slate-900 text-sm">VIFY Company</h4>
+                    <div class="space-y-3 sm:space-y-4">
+                        <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d">
+                            <h4 class="font-semibold text-slate-900 text-xs sm:text-sm">VIFY Company</h4>
                             <p class="text-slate-600 text-xs">Current Employer</p>
                             <div class="flex items-center mt-2 text-xs text-slate-500">
                                 <i class="fas fa-phone mr-2 text-neon-blue"></i>
                                 <span>Available upon request</span>
                             </div>
                         </div>
-                        <div class="glass p-4 rounded-xl hover-lift card-3d">
-                            <h4 class="font-semibold text-slate-900 text-sm">TOMOSIA Company</h4>
+                        <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d">
+                            <h4 class="font-semibold text-slate-900 text-xs sm:text-sm">TOMOSIA Company</h4>
                             <p class="text-slate-600 text-xs">Previous Employer</p>
                             <div class="flex items-center mt-2 text-xs text-slate-500">
                                 <i class="fas fa-phone mr-2 text-neon-purple"></i>
@@ -402,42 +440,42 @@
             </aside>
 
             <!-- Main Content with enhanced animations -->
-            <main class="lg:col-span-3 p-8 space-y-16 animate-slide-in-right">
+            <main class="lg:col-span-3 p-4 sm:p-6 md:p-8 space-y-8 sm:space-y-12 md:space-y-16 animate-slide-in-right order-1 lg:order-2">
                 
                 <!-- Work Experience with enhanced timeline -->
-                <section class="space-y-8">
-                    <h2 class="text-3xl font-display font-bold text-slate-900 uppercase tracking-wider flex items-center gradient-text animate-fade-in">
-                        <i class="fas fa-briefcase text-neon-blue mr-4 text-2xl"></i>
+                <section class="space-y-6 sm:space-y-8">
+                    <h2 class="text-2xl sm:text-3xl font-display font-bold text-slate-900 uppercase tracking-wider flex items-center gradient-text animate-fade-in">
+                        <i class="fas fa-briefcase text-neon-blue mr-3 sm:mr-4 text-xl sm:text-2xl"></i>
                         Work Experience
                     </h2>
                     
-                    <div class="relative pl-8 timeline-line">
+                    <div class="relative pl-6 sm:pl-8 timeline-line">
                         
                         <!-- Experience Item 1 - Enhanced with 3D and glass effects -->
-                        <div class="relative mb-16 group">
-                            <div class="absolute -left-6 top-4 w-8 h-8 bg-gradient-to-br from-neon-blue to-neon-purple rounded-full border-4 border-white shadow-neon group-hover:scale-125 transition-all duration-500 animate-pulse-soft"></div>
+                        <div class="relative mb-10 sm:mb-12 md:mb-16 group">
+                            <div class="absolute -left-4 sm:-left-6 top-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-neon-blue to-neon-purple rounded-full border-3 sm:border-4 border-white shadow-neon group-hover:scale-125 transition-all duration-500 animate-pulse-soft"></div>
                             
-                            <div class="glass p-8 rounded-2xl shadow-glass hover-lift card-3d border border-white/20 group-hover:border-neon-blue/30 transition-all duration-500">
-                                <div class="flex justify-between items-start mb-6">
+                            <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-glass hover-lift card-3d border border-white/20 group-hover:border-neon-blue/30 transition-all duration-500">
+                                <div class="flex flex-col sm:flex-row justify-between items-start mb-4 sm:mb-6 gap-3 sm:gap-0">
                                     <div>
-                                        <h3 class="text-2xl font-display font-bold text-slate-900 mb-2">Backend Developer</h3>
-                                        <p class="text-xl font-semibold gradient-text-neon">VIFY COMPANY</p>
+                                        <h3 class="text-xl sm:text-2xl font-display font-bold text-slate-900 mb-2">Backend Developer</h3>
+                                        <p class="text-lg sm:text-xl font-semibold gradient-text-neon">VIFY COMPANY</p>
                                     </div>
-                                    <span class="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-6 py-3 rounded-full text-sm font-bold shadow-neon animate-glow">
+                                    <span class="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold shadow-neon animate-glow flex-shrink-0">
                                         Jan 2025 - Present
                                     </span>
                                 </div>
                                 
-                                <div class="space-y-6 mb-6">
-                                    <div class="glass-dark p-6 rounded-xl">
-                                        <h4 class="font-bold text-slate-800 text-lg mb-3 gradient-text">Google Shopping Feed (Jan 2025 - Present)</h4>
-                                        <p class="text-sm text-slate-700 mb-2">Team size: 3 people</p>
-                                        <p class="text-sm text-slate-700 mb-4">Shopify App project integrated with Google Merchant Center to sync products from Shopify to Google Shopping.</p>
+                                <div class="space-y-4 sm:space-y-6 mb-4 sm:mb-6">
+                                    <div class="glass-dark p-4 sm:p-6 rounded-xl">
+                                        <h4 class="font-bold text-slate-800 text-base sm:text-lg mb-2 sm:mb-3 gradient-text">Google Shopping Feed (Jan 2025 - Present)</h4>
+                                        <p class="text-xs sm:text-sm text-slate-700 mb-2">Team size: 3 people</p>
+                                        <p class="text-xs sm:text-sm text-slate-700 mb-3 sm:mb-4">Shopify App project integrated with Google Merchant Center to sync products from Shopify to Google Shopping.</p>
                                     </div>
                                     
                                     <div>
-                                        <h5 class="font-bold text-slate-800 text-xs mb-3 uppercase tracking-wide neon-text text-neon-blue">Backend Tech Stack:</h5>
-                                        <div class="grid grid-cols-2 gap-2 text-xs text-slate-600 mb-4">
+                                        <h5 class="font-bold text-slate-800 text-xs mb-2 sm:mb-3 uppercase tracking-wide neon-text text-neon-blue">Backend Tech Stack:</h5>
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-2 text-xs text-slate-600 mb-3 sm:mb-4">
                                             <div class="flex items-center"><i class="fas fa-check-circle text-neon-green mr-2"></i>Node.js + NestJS (TypeScript)</div>
                                             <div class="flex items-center"><i class="fas fa-check-circle text-neon-green mr-2"></i>MongoDB + Mongoose ODM</div>
                                             <div class="flex items-center"><i class="fas fa-check-circle text-neon-green mr-2"></i>Redis (caching & queues)</div>
@@ -447,8 +485,8 @@
                                     </div>
                                     
                                     <div>
-                                        <h5 class="font-bold text-slate-800 text-xs mb-3 uppercase tracking-wide neon-text text-neon-purple">Key Features:</h5>
-                                        <div class="grid grid-cols-1 gap-1 text-xs text-slate-600 mb-4">
+                                        <h5 class="font-bold text-slate-800 text-xs mb-2 sm:mb-3 uppercase tracking-wide neon-text text-neon-purple">Key Features:</h5>
+                                        <div class="grid grid-cols-1 gap-1 text-xs text-slate-600 mb-3 sm:mb-4">
                                             <div class="flex items-center"><i class="fas fa-star text-neon-orange mr-2"></i>Shopify App integration (OAuth, Webhooks, GraphQL API)</div>
                                             <div class="flex items-center"><i class="fas fa-star text-neon-orange mr-2"></i>Google Shopping feeds management</div>
                                             <div class="flex items-center"><i class="fas fa-star text-neon-orange mr-2"></i>Google Merchant Center API integration</div>
@@ -459,7 +497,7 @@
                                     </div>
                                     
                                     <div>
-                                        <h5 class="font-bold text-slate-800 text-xs mb-3 uppercase tracking-wide neon-text text-neon-pink">Architecture:</h5>
+                                        <h5 class="font-bold text-slate-800 text-xs mb-2 sm:mb-3 uppercase tracking-wide neon-text text-neon-pink">Architecture:</h5>
                                         <div class="grid grid-cols-1 gap-1 text-xs text-slate-600">
                                             <div class="flex items-center"><i class="fas fa-cog text-neon-blue mr-2"></i>Modular NestJS structure</div>
                                             <div class="flex items-center"><i class="fas fa-cog text-neon-blue mr-2"></i>Repository pattern + Domain models</div>
@@ -470,31 +508,31 @@
                                     </div>
                                 </div>
                                 
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Node.js</span>
-                                    <span class="bg-gradient-to-r from-red-400 to-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">NestJS</span>
-                                    <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">TypeScript</span>
-                                    <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">MongoDB</span>
-                                    <span class="bg-gradient-to-r from-red-400 to-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Redis</span>
-                                    <span class="bg-gradient-to-r from-orange-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">BullMQ</span>
-                                    <span class="bg-gradient-to-r from-purple-400 to-purple-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Google API</span>
-                                    <span class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Shopify API</span>
-                                    <span class="bg-gradient-to-r from-gray-400 to-gray-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Docker</span>
+                                <div class="flex flex-wrap gap-1 sm:gap-2">
+                                    <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Node.js</span>
+                                    <span class="bg-gradient-to-r from-red-400 to-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">NestJS</span>
+                                    <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">TypeScript</span>
+                                    <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">MongoDB</span>
+                                    <span class="bg-gradient-to-r from-red-400 to-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Redis</span>
+                                    <span class="bg-gradient-to-r from-orange-400 to-orange-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">BullMQ</span>
+                                    <span class="bg-gradient-to-r from-purple-400 to-purple-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Google API</span>
+                                    <span class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Shopify API</span>
+                                    <span class="bg-gradient-to-r from-gray-400 to-gray-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Docker</span>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Experience Item 2 -->
-                        <div class="relative mb-16 group">
-                            <div class="absolute -left-6 top-4 w-8 h-8 bg-gradient-to-br from-neon-purple to-neon-pink rounded-full border-4 border-white shadow-neon-purple group-hover:scale-125 transition-all duration-500 animate-pulse-soft"></div>
+                        <div class="relative mb-10 sm:mb-12 md:mb-16 group">
+                            <div class="absolute -left-4 sm:-left-6 top-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-neon-purple to-neon-pink rounded-full border-3 sm:border-4 border-white shadow-neon-purple group-hover:scale-125 transition-all duration-500 animate-pulse-soft"></div>
                             
-                            <div class="glass p-8 rounded-2xl shadow-glass hover-lift card-3d border border-white/20 group-hover:border-neon-purple/30 transition-all duration-500">
-                                <div class="flex justify-between items-start mb-6">
+                            <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-glass hover-lift card-3d border border-white/20 group-hover:border-neon-purple/30 transition-all duration-500">
+                                <div class="flex flex-col sm:flex-row justify-between items-start mb-4 sm:mb-6 gap-3 sm:gap-0">
                                     <div>
-                                        <h3 class="text-2xl font-display font-bold text-slate-900 mb-2">Backend Developer</h3>
-                                        <p class="text-xl font-semibold gradient-text-neon">VIFY COMPANY</p>
+                                        <h3 class="text-xl sm:text-2xl font-display font-bold text-slate-900 mb-2">Backend Developer</h3>
+                                        <p class="text-lg sm:text-xl font-semibold gradient-text-neon">VIFY COMPANY</p>
                                     </div>
-                                    <span class="bg-gradient-to-r from-neon-purple to-neon-pink text-white px-6 py-3 rounded-full text-sm font-bold shadow-neon-purple">
+                                    <span class="bg-gradient-to-r from-neon-purple to-neon-pink text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold shadow-neon-purple flex-shrink-0">
                                         May 2023 - 2025
                                     </span>
                                 </div>
@@ -591,57 +629,57 @@
                 </section>
 
                 <!-- Key Achievements with 3D cards -->
-                <section class="space-y-8">
-                    <h2 class="text-3xl font-display font-bold text-slate-900 uppercase tracking-wider flex items-center gradient-text">
-                        <i class="fas fa-trophy text-neon-orange mr-4 text-2xl animate-bounce-subtle"></i>
+                <section class="space-y-6 sm:space-y-8">
+                    <h2 class="text-2xl sm:text-3xl font-display font-bold text-slate-900 uppercase tracking-wider flex items-center gradient-text">
+                        <i class="fas fa-trophy text-neon-orange mr-3 sm:mr-4 text-xl sm:text-2xl animate-bounce-subtle"></i>
                         Key Achievements
                     </h2>
                     
-                    <div class="grid md:grid-cols-2 gap-8">
+                    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
                         <!-- Achievement 1 -->
-                        <div class="glass p-8 rounded-2xl border-l-4 border-yellow-400 shadow-glass hover-lift card-3d animate-fade-in">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-star text-yellow-500 text-3xl mr-4 animate-pulse-soft"></i>
-                                <h3 class="text-xl font-display font-bold text-slate-900 gradient-text">4.8 Star App Rating</h3>
+                        <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border-l-4 border-yellow-400 shadow-glass hover-lift card-3d animate-fade-in">
+                            <div class="flex items-center mb-3 sm:mb-4">
+                                <i class="fas fa-star text-yellow-500 text-2xl sm:text-3xl mr-3 sm:mr-4 animate-pulse-soft"></i>
+                                <h3 class="text-lg sm:text-xl font-display font-bold text-slate-900 gradient-text">4.8 Star App Rating</h3>
                             </div>
-                            <p class="text-sm text-slate-600 mb-3 font-semibold">Gift Card Shopify App - 2024</p>
-                            <p class="text-sm text-slate-700 leading-relaxed">
+                            <p class="text-xs sm:text-sm text-slate-600 mb-2 sm:mb-3 font-semibold">Gift Card Shopify App - 2024</p>
+                            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
                                 Achieved 4.8-star rating within one year of development using clean architecture and microservices.
                             </p>
                         </div>
 
                         <!-- Achievement 2 -->
-                        <div class="glass p-8 rounded-2xl border-l-4 border-blue-400 shadow-glass hover-lift card-3d animate-fade-in">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-cogs text-blue-500 text-3xl mr-4 animate-pulse-soft"></i>
-                                <h3 class="text-xl font-display font-bold text-slate-900 gradient-text">Microservices Expert</h3>
+                        <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border-l-4 border-blue-400 shadow-glass hover-lift card-3d animate-fade-in">
+                            <div class="flex items-center mb-3 sm:mb-4">
+                                <i class="fas fa-cogs text-blue-500 text-2xl sm:text-3xl mr-3 sm:mr-4 animate-pulse-soft"></i>
+                                <h3 class="text-lg sm:text-xl font-display font-bold text-slate-900 gradient-text">Microservices Expert</h3>
                             </div>
-                            <p class="text-sm text-slate-600 mb-3 font-semibold">VIFY Company - 2023-2025</p>
-                            <p class="text-sm text-slate-700 leading-relaxed">
+                            <p class="text-xs sm:text-sm text-slate-600 mb-2 sm:mb-3 font-semibold">VIFY Company - 2023-2025</p>
+                            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
                                 Successfully implemented microservices architecture and event-driven programming for large-scale projects.
                             </p>
                         </div>
 
                         <!-- Achievement 3 -->
-                        <div class="glass p-8 rounded-2xl border-l-4 border-green-400 shadow-glass hover-lift card-3d animate-fade-in">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-users text-green-500 text-3xl mr-4 animate-pulse-soft"></i>
-                                <h3 class="text-xl font-display font-bold text-slate-900 gradient-text">Team Leadership</h3>
+                        <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border-l-4 border-green-400 shadow-glass hover-lift card-3d animate-fade-in">
+                            <div class="flex items-center mb-3 sm:mb-4">
+                                <i class="fas fa-users text-green-500 text-2xl sm:text-3xl mr-3 sm:mr-4 animate-pulse-soft"></i>
+                                <h3 class="text-lg sm:text-xl font-display font-bold text-slate-900 gradient-text">Team Leadership</h3>
                             </div>
-                            <p class="text-sm text-slate-600 mb-3 font-semibold">Multiple Projects - 2021-2025</p>
-                            <p class="text-sm text-slate-700 leading-relaxed">
+                            <p class="text-xs sm:text-sm text-slate-600 mb-2 sm:mb-3 font-semibold">Multiple Projects - 2021-2025</p>
+                            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
                                 Led and mentored development teams across various projects, managing teams of 2-6 developers.
                             </p>
                         </div>
 
                         <!-- Achievement 4 -->
-                        <div class="glass p-8 rounded-2xl border-l-4 border-purple-400 shadow-glass hover-lift card-3d animate-fade-in">
-                            <div class="flex items-center mb-4">
-                                <i class="fas fa-globe text-purple-500 text-3xl mr-4 animate-pulse-soft"></i>
-                                <h3 class="text-xl font-display font-bold text-slate-900 gradient-text">Multi-Domain Expertise</h3>
+                        <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border-l-4 border-purple-400 shadow-glass hover-lift card-3d animate-fade-in">
+                            <div class="flex items-center mb-3 sm:mb-4">
+                                <i class="fas fa-globe text-purple-500 text-2xl sm:text-3xl mr-3 sm:mr-4 animate-pulse-soft"></i>
+                                <h3 class="text-lg sm:text-xl font-display font-bold text-slate-900 gradient-text">Multi-Domain Expertise</h3>
                             </div>
-                            <p class="text-sm text-slate-600 mb-3 font-semibold">Various Industries - 2020-2025</p>
-                            <p class="text-sm text-slate-700 leading-relaxed">
+                            <p class="text-xs sm:text-sm text-slate-600 mb-2 sm:mb-3 font-semibold">Various Industries - 2020-2025</p>
+                            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
                                 Extensive experience developing applications across multiple domains: E-commerce, Healthcare, Education, Automotive.
                             </p>
                         </div>
@@ -684,16 +722,34 @@
                 observer.observe(item);
             });
 
-            // Enhanced hover effects for skill tags
+            // Enhanced hover effects for skill tags (desktop and touch)
             document.querySelectorAll('.rounded-full').forEach(tag => {
+                // Mouse events for desktop
                 tag.addEventListener('mouseenter', function() {
-                    this.style.transform = 'scale(1.1) translateY(-2px)';
-                    this.style.boxShadow = '0 10px 25px rgba(0, 217, 255, 0.3)';
+                    if (!('ontouchstart' in window)) {
+                        this.style.transform = 'scale(1.1) translateY(-2px)';
+                        this.style.boxShadow = '0 10px 25px rgba(0, 217, 255, 0.3)';
+                    }
                 });
                 
                 tag.addEventListener('mouseleave', function() {
-                    this.style.transform = 'scale(1) translateY(0)';
-                    this.style.boxShadow = '';
+                    if (!('ontouchstart' in window)) {
+                        this.style.transform = 'scale(1) translateY(0)';
+                        this.style.boxShadow = '';
+                    }
+                });
+
+                // Touch events for mobile
+                tag.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(1.05)';
+                    this.style.transition = 'transform 0.1s ease';
+                });
+
+                tag.addEventListener('touchend', function() {
+                    this.style.transform = 'scale(1)';
+                    setTimeout(() => {
+                        this.style.transition = '';
+                    }, 100);
                 });
             });
 
@@ -755,6 +811,43 @@
                 
                 // Clean up old trail points
                 mouseTrail = mouseTrail.filter(point => Date.now() - point.time < 1000);
+            });
+
+            // Mobile navigation toggle
+            const mobileToggle = document.getElementById('mobile-nav-toggle');
+            const sidebar = document.getElementById('sidebar');
+            let sidebarVisible = true;
+
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', function() {
+                    if (window.innerWidth < 1024) { // Only on mobile/tablet
+                        sidebarVisible = !sidebarVisible;
+                        if (sidebarVisible) {
+                            sidebar.classList.remove('hidden');
+                            sidebar.classList.add('block');
+                            this.innerHTML = '<i class="fas fa-times"></i>';
+                        } else {
+                            sidebar.classList.add('hidden');
+                            sidebar.classList.remove('block');
+                            this.innerHTML = '<i class="fas fa-bars"></i>';
+                        }
+                    }
+                });
+            }
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 1024) {
+                    // Desktop view - ensure sidebar is visible
+                    sidebar.classList.remove('hidden');
+                    sidebar.classList.add('block');
+                    if (mobileToggle) mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    sidebarVisible = true;
+                } else if (window.innerWidth < 1024 && !sidebarVisible) {
+                    // Mobile view - keep sidebar hidden if it was hidden
+                    sidebar.classList.add('hidden');
+                    sidebar.classList.remove('block');
+                }
             });
         });
 
