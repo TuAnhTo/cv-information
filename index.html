@@ -6,7 +6,8 @@
     <title>TO ANH TU - Backend Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -82,47 +83,110 @@
     </script>
     <style>
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
+
         @keyframes slideInRight {
-            from { opacity: 0; transform: translateX(50px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
+
         @keyframes pulseSoft {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.8; }
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
         }
+
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
+
         @keyframes glow {
-            from { box-shadow: 0 0 20px rgba(0, 217, 255, 0.2); }
-            to { box-shadow: 0 0 30px rgba(0, 217, 255, 0.4), 0 0 40px rgba(176, 132, 255, 0.2); }
+            from {
+                box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+            }
+            to {
+                box-shadow: 0 0 30px rgba(0, 217, 255, 0.4), 0 0 40px rgba(176, 132, 255, 0.2);
+            }
         }
+
         @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
         }
+
         @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
         }
+
         @keyframes kinetic {
-            0% { transform: perspective(1000px) rotateY(0deg); }
-            25% { transform: perspective(1000px) rotateY(5deg); }
-            50% { transform: perspective(1000px) rotateY(0deg); }
-            75% { transform: perspective(1000px) rotateY(-5deg); }
-            100% { transform: perspective(1000px) rotateY(0deg); }
+            0% {
+                transform: perspective(1000px) rotateY(0deg);
+            }
+            25% {
+                transform: perspective(1000px) rotateY(5deg);
+            }
+            50% {
+                transform: perspective(1000px) rotateY(0deg);
+            }
+            75% {
+                transform: perspective(1000px) rotateY(-5deg);
+            }
+            100% {
+                transform: perspective(1000px) rotateY(0deg);
+            }
         }
+
         @keyframes bounceSubtle {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
         }
 
         /* Glass morphism effect */
@@ -179,7 +243,7 @@
 
         /* Shimmer effect */
         .shimmer {
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
             background-size: 200% 100%;
             animation: shimmer 2.5s linear infinite;
         }
@@ -208,13 +272,16 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: rgba(0, 0, 0, 0.1);
         }
+
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(135deg, #00d9ff, #b084ff);
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(135deg, #b084ff, #ff6b9d);
         }
@@ -225,17 +292,17 @@
             .hover-lift:hover {
                 transform: translateY(-4px) scale(1.01);
             }
-            
+
             /* Disable some animations on mobile for performance */
             .animate-glow {
                 animation: none;
             }
-            
+
             /* Reduce blur effects on mobile */
             .backdrop-blur-xl {
                 backdrop-filter: blur(10px);
             }
-            
+
             /* Hide some decorative elements on very small screens */
             @media (max-width: 480px) {
                 .animate-float, .animate-pulse-soft {
@@ -244,634 +311,1022 @@
             }
         }
 
-        .print-friendly { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+        .print-friendly {
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+        }
     </style>
 </head>
 
 <body class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 font-sans text-slate-800 antialiased overflow-x-hidden">
-    <!-- Background mesh gradient -->
-    <div class="fixed inset-0 bg-mesh-gradient opacity-30 pointer-events-none"></div>
-    
-    <div class="relative max-w-6xl mx-auto my-4 md:my-8 bg-white/80 backdrop-blur-xl shadow-2xl rounded-xl md:rounded-3xl overflow-hidden print:shadow-none print:my-0 print:rounded-none border border-white/20 px-2 md:px-0">
-        
-        <!-- Mobile Navigation Toggle -->
-        <button id="mobile-nav-toggle" class="lg:hidden fixed top-4 right-4 z-50 bg-gradient-to-r from-neon-blue to-neon-purple text-white p-3 rounded-full shadow-neon">
-            <i class="fas fa-bars"></i>
-        </button>
-        
-        <!-- Animated gradient border -->
-        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink opacity-20 animate-shimmer pointer-events-none"></div>
-        
-        <!-- Header Section -->
-        <header class="relative px-4 sm:px-8 md:px-12 py-8 sm:py-12 md:py-16 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white animate-fade-in overflow-hidden">
-            <!-- Animated background elements -->
-            <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 rounded-full blur-3xl animate-float"></div>
-            <div class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-neon-pink/20 to-neon-orange/20 rounded-full blur-3xl animate-pulse-soft"></div>
-            
-            <div class="relative z-10 flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-6 md:space-x-12 lg:space-x-16">
-                <!-- Profile Image with 3D effect -->
-                <div class="relative group flex-shrink-0">
-                    <div class="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-neon-blue to-neon-purple flex items-center justify-center text-white text-3xl sm:text-4xl md:text-5xl font-bold shadow-neon transform group-hover:scale-110 transition-all duration-500 animate-glow card-3d">
-                        <i class="fas fa-user relative z-10"></i>
-                        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-neon-purple to-neon-pink opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    </div>
-                    <div class="absolute -bottom-3 -right-3 w-12 h-12 bg-gradient-to-br from-green-400 to-green-500 rounded-full border-4 border-white flex items-center justify-center animate-bounce-subtle">
-                        <i class="fas fa-check text-white text-sm"></i>
+<!-- Background mesh gradient -->
+<div class="fixed inset-0 bg-mesh-gradient opacity-30 pointer-events-none"></div>
+
+<div class="relative max-w-6xl mx-auto my-4 md:my-8 bg-white/80 backdrop-blur-xl shadow-2xl rounded-xl md:rounded-3xl overflow-hidden print:shadow-none print:my-0 print:rounded-none border border-white/20 px-2 md:px-0">
+
+    <!-- Mobile Navigation Toggle -->
+    <button id="mobile-nav-toggle"
+            class="lg:hidden fixed top-4 right-4 z-50 bg-gradient-to-r from-neon-blue to-neon-purple text-white p-3 rounded-full shadow-neon">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Animated gradient border -->
+    <div class="absolute inset-0 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink opacity-20 animate-shimmer pointer-events-none"></div>
+
+    <!-- Header Section -->
+    <header class="relative px-4 sm:px-8 md:px-12 py-8 sm:py-12 md:py-16 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white animate-fade-in overflow-hidden">
+        <!-- Animated background elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-neon-pink/20 to-neon-orange/20 rounded-full blur-3xl animate-pulse-soft"></div>
+
+        <div class="relative z-10 flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-6 md:space-x-12 lg:space-x-16">
+            <!-- Profile Image with 3D effect -->
+            <div class="relative group flex-shrink-0">
+                <div class="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-neon-blue to-neon-purple flex items-center justify-center text-white text-3xl sm:text-4xl md:text-5xl font-bold shadow-neon transform group-hover:scale-110 transition-all duration-500 animate-glow card-3d">
+                    <i class="fas fa-user relative z-10"></i>
+                    <div class="absolute inset-0 rounded-full bg-gradient-to-br from-neon-purple to-neon-pink opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="absolute -bottom-3 -right-3 w-12 h-12 bg-gradient-to-br from-green-400 to-green-500 rounded-full border-4 border-white flex items-center justify-center animate-bounce-subtle">
+                    <i class="fas fa-check text-white text-sm"></i>
+                </div>
+            </div>
+
+            <!-- Header Info with kinetic typography -->
+            <div class="flex-1 space-y-4 sm:space-y-6 text-center sm:text-left">
+                <div class="animate-kinetic">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black gradient-text-neon mb-3 tracking-tight animate-fade-in">
+                        TO ANH TU
+                    </h1>
+                    <div class="text-lg sm:text-xl md:text-2xl font-semibold text-neon-blue tracking-wider uppercase animate-slide-in-right">
+                        Backend Developer
                     </div>
                 </div>
-                
-                <!-- Header Info with kinetic typography -->
-                <div class="flex-1 space-y-4 sm:space-y-6 text-center sm:text-left">
-                    <div class="animate-kinetic">
-                        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black gradient-text-neon mb-3 tracking-tight animate-fade-in">
-                            TO ANH TU
-                        </h1>
-                        <div class="text-lg sm:text-xl md:text-2xl font-semibold text-neon-blue tracking-wider uppercase animate-slide-in-right">
-                            Backend Developer
-                        </div>
+
+                <div class="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed animate-fade-in max-w-2xl">
+                    Seeking dynamic work environment to develop programming skills and knowledge,
+                    becoming a professional software engineer with <span
+                        class="text-neon-green font-semibold">4+ years</span> of Backend development experience.
+                </div>
+
+                <!-- Contact Info with glass morphism -->
+                <div class="flex flex-col sm:flex-row flex-wrap items-center gap-3 sm:gap-4 md:gap-8 text-slate-300 animate-slide-in-left">
+                    <div class="flex items-center space-x-3 glass-dark px-3 sm:px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-300 group cursor-pointer text-sm sm:text-base">
+                        <i class="fas fa-phone text-neon-blue group-hover:animate-bounce"></i>
+                        <span class="font-medium">0966069045</span>
                     </div>
-                    
-                    <div class="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed animate-fade-in max-w-2xl">
-                        Seeking dynamic work environment to develop programming skills and knowledge,
-                        becoming a professional software engineer with <span class="text-neon-green font-semibold">4+ years</span> of Backend development experience.
+                    <div class="flex items-center space-x-3 glass-dark px-3 sm:px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-300 group cursor-pointer text-sm sm:text-base">
+                        <i class="fas fa-envelope text-neon-purple group-hover:animate-bounce"></i>
+                        <span class="font-medium">toanhtu.98@gmail.com</span>
                     </div>
-                    
-                    <!-- Contact Info with glass morphism -->
-                    <div class="flex flex-col sm:flex-row flex-wrap items-center gap-3 sm:gap-4 md:gap-8 text-slate-300 animate-slide-in-left">
-                        <div class="flex items-center space-x-3 glass-dark px-3 sm:px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-300 group cursor-pointer text-sm sm:text-base">
-                            <i class="fas fa-phone text-neon-blue group-hover:animate-bounce"></i>
-                            <span class="font-medium">0966069045</span>
-                        </div>
-                        <div class="flex items-center space-x-3 glass-dark px-3 sm:px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-300 group cursor-pointer text-sm sm:text-base">
-                            <i class="fas fa-envelope text-neon-purple group-hover:animate-bounce"></i>
-                            <span class="font-medium">toanhtu.98@gmail.com</span>
-                        </div>
-                        <div class="flex items-center space-x-3 glass-dark px-3 sm:px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-300 group cursor-pointer text-sm sm:text-base">
-                            <i class="fas fa-map-marker-alt text-neon-pink group-hover:animate-bounce"></i>
-                            <span class="font-medium">Hanoi, Vietnam</span>
-                        </div>
+                    <div class="flex items-center space-x-3 glass-dark px-3 sm:px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-300 group cursor-pointer text-sm sm:text-base">
+                        <i class="fas fa-map-marker-alt text-neon-pink group-hover:animate-bounce"></i>
+                        <span class="font-medium">Hanoi, Vietnam</span>
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <div class="grid lg:grid-cols-5 min-h-screen relative flex-col lg:flex-row">
-            <!-- Sidebar with glass morphism -->
-            <aside id="sidebar" class="lg:col-span-2 glass p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8 md:space-y-10 animate-slide-in-left border-r border-white/20 order-2 lg:order-1 lg:block">
-                
-                <!-- About Me -->
-                <section class="space-y-3 sm:space-y-4">
-                    <h2 class="text-lg sm:text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-blue to-neon-purple pb-3 animate-fade-in">
-                        <i class="fas fa-user-circle text-neon-blue mr-3"></i>
-                        About Me
-                    </h2>
-                    <p class="text-slate-700 leading-relaxed text-xs sm:text-sm animate-fade-in">
-                        Passionate Backend Developer with expertise in modern web technologies and microservices architecture. 
-                        Experienced in building scalable applications and leading development teams across various industries.
-                    </p>
-                </section>
+    <div class="grid lg:grid-cols-5 min-h-screen relative flex-col lg:flex-row">
+        <!-- Sidebar with glass morphism -->
+        <aside id="sidebar"
+               class="lg:col-span-2 glass p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8 md:space-y-10 animate-slide-in-left border-r border-white/20 order-2 lg:order-1 lg:block">
 
-                <!-- Education -->
-                <section class="space-y-3 sm:space-y-4">
-                    <h2 class="text-lg sm:text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-purple to-neon-pink pb-3">
-                        <i class="fas fa-graduation-cap text-neon-purple mr-3"></i>
-                        Education
-                    </h2>
-                    <div class="relative pl-4 sm:pl-6 border-l-2 border-gradient-to-b from-neon-blue to-neon-purple hover-lift">
-                        <div class="absolute -left-2 sm:-left-3 top-2 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-to-br from-neon-blue to-neon-purple rounded-full shadow-neon animate-pulse-soft"></div>
-                        <div class="glass p-3 sm:p-4 rounded-xl space-y-2">
-                            <h3 class="font-semibold text-slate-900 text-sm sm:text-base">Bachelor of Information Technology</h3>
-                            <p class="text-slate-600 text-xs sm:text-sm">Hanoi University of Business and Technology</p>
-                            <span class="inline-block bg-gradient-to-r from-neon-blue to-neon-purple text-white px-3 sm:px-4 py-1 rounded-full text-xs font-semibold shadow-neon">
+            <!-- About Me -->
+            <section class="space-y-3 sm:space-y-4">
+                <h2 class="text-lg sm:text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-blue to-neon-purple pb-3 animate-fade-in">
+                    <i class="fas fa-user-circle text-neon-blue mr-3"></i>
+                    About Me
+                </h2>
+                <p class="text-slate-700 leading-relaxed text-xs sm:text-sm animate-fade-in">
+                    Passionate Backend Developer with expertise in modern web technologies and microservices
+                    architecture.
+                    Experienced in building scalable applications and leading development teams across various
+                    industries.
+                </p>
+            </section>
+
+            <!-- Education -->
+            <section class="space-y-3 sm:space-y-4">
+                <h2 class="text-lg sm:text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-purple to-neon-pink pb-3">
+                    <i class="fas fa-graduation-cap text-neon-purple mr-3"></i>
+                    Education
+                </h2>
+                <div class="relative pl-4 sm:pl-6 border-l-2 border-gradient-to-b from-neon-blue to-neon-purple hover-lift">
+                    <div class="absolute -left-2 sm:-left-3 top-2 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-to-br from-neon-blue to-neon-purple rounded-full shadow-neon animate-pulse-soft"></div>
+                    <div class="glass p-3 sm:p-4 rounded-xl space-y-2">
+                        <h3 class="font-semibold text-slate-900 text-sm sm:text-base">Bachelor of Information
+                            Technology</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm">Hanoi University of Business and Technology</p>
+                        <span class="inline-block bg-gradient-to-r from-neon-blue to-neon-purple text-white px-3 sm:px-4 py-1 rounded-full text-xs font-semibold shadow-neon">
                                 2017 - 2021
                             </span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Skills with 3D cards -->
+            <section class="space-y-3 sm:space-y-4">
+                <h2 class="text-lg sm:text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-green to-neon-blue pb-3">
+                    <i class="fas fa-code text-neon-green mr-3"></i>
+                    Technical Skills
+                </h2>
+                <div class="grid grid-cols-1 gap-2 sm:gap-3">
+                    <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
+                        <span class="font-medium text-slate-800 text-xs sm:text-sm">Node.js </span>
+                    </div>
+                    <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
+                        <span class="font-medium text-slate-800 text-xs sm:text-sm">NestJS / Express </span>
+                    </div>
+                    <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
+                        <span class="font-medium text-slate-800 text-xs sm:text-sm">TypeScript </span>
+                    </div>
+                    <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
+                        <span class="font-medium text-slate-800 text-xs sm:text-sm">PHP </span>
+                    </div>
+                    <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
+                        <span class="font-medium text-slate-800 text-xs sm:text-sm">React </span>
+                    </div>
+                    <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
+                        <span class="font-medium text-slate-800 text-xs sm:text-sm">Vue.js </span>
+                    </div>
+                </div>
+
+                <!-- Tech Stack with neon badges -->
+                <div class="mt-6 sm:mt-8">
+                    <h3 class="font-semibold text-slate-700 text-xs sm:text-sm mb-3 sm:mb-4 gradient-text">Technologies
+                        & Tools</h3>
+                    <div class="flex flex-wrap gap-1 sm:gap-2">
+                        <span class="bg-gradient-to-r from-orange-400 to-orange-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">AWS</span>
+                        <span class="bg-gradient-to-r from-indigo-400 to-indigo-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">GitLab CI/CD</span>
+                        <span class="bg-gradient-to-r from-purple-400 to-purple-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">Redis</span>
+                        <span class="bg-gradient-to-r from-pink-400 to-pink-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">RabbitMQ</span>
+                        <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">Docker</span>
+                        <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">MongoDB</span>
+                        <span class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">MySQL</span>
+                        <span class="bg-gradient-to-r from-purple-400 to-purple-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">Prisma</span>
+                        <span class="bg-gradient-to-r from-red-400 to-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">Socket.io</span>
+                        <span class="bg-gradient-to-r from-indigo-400 to-indigo-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">PM2</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Detailed Skills Section -->
+            <section class="space-y-3 sm:space-y-4">
+                <h2 class="text-lg sm:text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-purple to-neon-pink pb-3">
+                    <i class="fas fa-cogs text-neon-purple mr-3"></i>
+                    Detailed Skills
+                </h2>
+
+                <!-- Backend Skills -->
+                <div class="glass p-3 sm:p-4 rounded-xl hover-lift">
+                    <h3 class="font-semibold text-slate-900 text-sm sm:text-base mb-3 text-neon-blue">
+                        <i class="fas fa-server mr-2"></i>Backend
+                    </h3>
+                    <div class="text-xs sm:text-sm text-slate-700 space-y-2">
+                        <div class="flex items-center"><span class="w-2 h-2 bg-neon-blue rounded-full mr-2"></span>Performance
+                            and scalability optimization
+                        </div>
+                        <div class="flex items-center"><span class="w-2 h-2 bg-neon-purple rounded-full mr-2"></span>API
+                            design
+                        </div>
+                        <div class="flex items-center"><span class="w-2 h-2 bg-neon-pink rounded-full mr-2"></span>Express,
+                            NestJS, ES6, Microservices
+                        </div>
+                        <div class="flex items-center"><span class="w-2 h-2 bg-neon-green rounded-full mr-2"></span>Clean
+                            code & TeamWork
+                        </div>
+                        <div class="flex items-center"><span class="w-2 h-2 bg-neon-orange rounded-full mr-2"></span>Estimated
+                            mission time
+                        </div>
+                        <div class="flex items-center"><span class="w-2 h-2 bg-neon-blue rounded-full mr-2"></span>Scrum,
+                            Kanban
+                        </div>
+                        <div class="flex items-center"><span class="w-2 h-2 bg-neon-purple rounded-full mr-2"></span>Git,
+                            PM2, Redis
+                        </div>
+                        <div class="flex items-center"><span class="w-2 h-2 bg-neon-pink rounded-full mr-2"></span>Design
+                            Pattern
+                        </div>
+                        <div class="flex items-center"><span class="w-2 h-2 bg-neon-green rounded-full mr-2"></span>OOP,
+                            MySQL, MongoDB, Prisma, Sequelize
+                        </div>
+                        <div class="flex items-center"><span class="w-2 h-2 bg-neon-orange rounded-full mr-2"></span>AWS
+                            S3, Lambda functions, RabbitMQ, socket.io, pusher, firebase, cloudwatch, cloudfront,
+                            lighsail, nginx, docker
+                        </div>
+                        <div class="flex items-center"><span class="w-2 h-2 bg-neon-blue rounded-full mr-2"></span>AWS
+                            Balancer
+                        </div>
+                        <div class="flex items-center"><span class="w-2 h-2 bg-neon-purple rounded-full mr-2"></span>CI/CD,
+                            GitLab runner, GitHub actions
                         </div>
                     </div>
-                </section>
+                </div>
 
-                <!-- Technical Skills with 3D cards -->
-                <section class="space-y-3 sm:space-y-4">
-                    <h2 class="text-lg sm:text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-green to-neon-blue pb-3">
-                        <i class="fas fa-code text-neon-green mr-3"></i>
-                        Technical Skills
-                    </h2>
-                    <div class="grid grid-cols-1 gap-2 sm:gap-3">
-                        <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
-                            <span class="font-medium text-slate-800 text-xs sm:text-sm">Node.js <span class="text-neon-blue">(4 years)</span></span>
+                <!-- Frontend Skills -->
+                <div class="glass p-3 sm:p-4 rounded-xl hover-lift">
+                    <h3 class="font-semibold text-slate-900 text-sm sm:text-base mb-3 text-neon-green">
+                        <i class="fas fa-desktop mr-2"></i>Frontend
+                    </h3>
+                    <div class="text-xs sm:text-sm text-slate-700 space-y-2">
+                        <div class="flex items-center"><span class="w-2 h-2 bg-neon-green rounded-full mr-2"></span>React,
+                            Vue
                         </div>
-                        <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
-                            <span class="font-medium text-slate-800 text-xs sm:text-sm">NestJS / Express</span>
+                        <div class="flex items-center"><span class="w-2 h-2 bg-neon-blue rounded-full mr-2"></span>Basic
+                            knowledge of React, Vue, and React hooks
                         </div>
-                        <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
-                            <span class="font-medium text-slate-800 text-xs sm:text-sm">TypeScript</span>
-                        </div>
-                        <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
-                            <span class="font-medium text-slate-800 text-xs sm:text-sm">PHP <span class="text-neon-purple">(1 year)</span></span>
-                        </div>
-                        <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
-                            <span class="font-medium text-slate-800 text-xs sm:text-sm">React <span class="text-neon-pink">(2 years)</span></span>
-                        </div>
-                        <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d shadow-inner-glow">
-                            <span class="font-medium text-slate-800 text-xs sm:text-sm">Vue.js</span>
+                        <div class="flex items-center"><span class="w-2 h-2 bg-neon-purple rounded-full mr-2"></span>Familiarity
+                            with HTML, CSS, ShadCN UI design, Tailwind, and Bootstrap
                         </div>
                     </div>
+                </div>
 
-                    <!-- Tech Stack with neon badges -->
-                    <div class="mt-6 sm:mt-8">
-                        <h3 class="font-semibold text-slate-700 text-xs sm:text-sm mb-3 sm:mb-4 gradient-text">Technologies & Tools</h3>
-                        <div class="flex flex-wrap gap-1 sm:gap-2">
-                            <span class="bg-gradient-to-r from-orange-400 to-orange-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">AWS</span>
-                            <span class="bg-gradient-to-r from-indigo-400 to-indigo-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">GitLab CI/CD</span>
-                            <span class="bg-gradient-to-r from-purple-400 to-purple-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">Redis</span>
-                            <span class="bg-gradient-to-r from-pink-400 to-pink-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">RabbitMQ</span>
-                            <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">Docker</span>
-                            <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">MongoDB</span>
-                            <span class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">MySQL</span>
-                            <span class="bg-gradient-to-r from-purple-400 to-purple-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">Prisma</span>
-                            <span class="bg-gradient-to-r from-red-400 to-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">Socket.io</span>
-                            <span class="bg-gradient-to-r from-indigo-400 to-indigo-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon animate-bounce-subtle">PM2</span>
+                <!-- Operating System Skills -->
+                <div class="glass p-3 sm:p-4 rounded-xl hover-lift">
+                    <h3 class="font-semibold text-slate-900 text-sm sm:text-base mb-3 text-neon-orange">
+                        <i class="fas fa-desktop mr-2"></i>Operating System
+                    </h3>
+                    <div class="text-xs sm:text-sm text-slate-700 space-y-2">
+                        <div class="flex items-center"><span class="w-2 h-2 bg-neon-orange rounded-full mr-2"></span>Mac
+                            OSX
+                        </div>
+                        <div class="flex items-center"><span class="w-2 h-2 bg-neon-blue rounded-full mr-2"></span>Windows
+                            10
+                        </div>
+                        <div class="flex items-center"><span class="w-2 h-2 bg-neon-purple rounded-full mr-2"></span>Ubuntu
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <!-- Languages -->
-                <section class="space-y-3 sm:space-y-4">
-                    <h2 class="text-lg sm:text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-orange to-neon-pink pb-3">
-                        <i class="fas fa-language text-neon-orange mr-3"></i>
-                        Languages
-                    </h2>
-                    <div class="space-y-2 sm:space-y-3">
-                        <div class="flex justify-between items-center glass p-2 sm:p-3 rounded-xl hover-lift">
-                            <span class="font-medium text-slate-800 text-xs sm:text-sm">Vietnamese</span>
-                            <span class="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon">Native</span>
-                        </div>
-                        <div class="flex justify-between items-center glass p-2 sm:p-3 rounded-xl hover-lift">
-                            <span class="font-medium text-slate-800 text-xs sm:text-sm">English</span>
-                            <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon">Intermediate</span>
-                        </div>
+            <!-- Languages -->
+            <section class="space-y-3 sm:space-y-4">
+                <h2 class="text-lg sm:text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-orange to-neon-pink pb-3">
+                    <i class="fas fa-language text-neon-orange mr-3"></i>
+                    Languages
+                </h2>
+                <div class="space-y-2 sm:space-y-3">
+                    <div class="flex justify-between items-center glass p-2 sm:p-3 rounded-xl hover-lift">
+                        <span class="font-medium text-slate-800 text-xs sm:text-sm">Vietnamese</span>
+                        <span class="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon">Native</span>
                     </div>
-                </section>
-
-                <!-- References -->
-                <section class="space-y-3 sm:space-y-4">
-                    <h2 class="text-lg sm:text-xl font-display font-bold text-slate-900 uppercase tracking-wider border-b-2 border-gradient-to-r from-neon-green to-neon-blue pb-3">
-                        <i class="fas fa-users text-neon-green mr-3"></i>
-                        References
-                    </h2>
-                    <div class="space-y-3 sm:space-y-4">
-                        <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d">
-                            <h4 class="font-semibold text-slate-900 text-xs sm:text-sm">VIFY Company</h4>
-                            <p class="text-slate-600 text-xs">Current Employer</p>
-                            <div class="flex items-center mt-2 text-xs text-slate-500">
-                                <i class="fas fa-phone mr-2 text-neon-blue"></i>
-                                <span>Available upon request</span>
-                            </div>
-                        </div>
-                        <div class="glass p-3 sm:p-4 rounded-xl hover-lift card-3d">
-                            <h4 class="font-semibold text-slate-900 text-xs sm:text-sm">TOMOSIA Company</h4>
-                            <p class="text-slate-600 text-xs">Previous Employer</p>
-                            <div class="flex items-center mt-2 text-xs text-slate-500">
-                                <i class="fas fa-phone mr-2 text-neon-purple"></i>
-                                <span>Available upon request</span>
-                            </div>
-                        </div>
+                    <div class="flex justify-between items-center glass p-2 sm:p-3 rounded-xl hover-lift">
+                        <span class="font-medium text-slate-800 text-xs sm:text-sm">English</span>
+                        <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon">Intermediate</span>
                     </div>
-                </section>
-            </aside>
+                </div>
+            </section>
+        </aside>
 
-            <!-- Main Content with enhanced animations -->
-            <main class="lg:col-span-3 p-4 sm:p-6 md:p-8 space-y-8 sm:space-y-12 md:space-y-16 animate-slide-in-right order-1 lg:order-2">
-                
-                <!-- Work Experience with enhanced timeline -->
-                <section class="space-y-6 sm:space-y-8">
-                    <h2 class="text-2xl sm:text-3xl font-display font-bold text-slate-900 uppercase tracking-wider flex items-center gradient-text animate-fade-in">
-                        <i class="fas fa-briefcase text-neon-blue mr-3 sm:mr-4 text-xl sm:text-2xl"></i>
-                        Work Experience
-                    </h2>
-                    
-                    <div class="relative pl-6 sm:pl-8 timeline-line">
-                        
-                        <!-- Experience Item 1 - Enhanced with 3D and glass effects -->
-                        <div class="relative mb-10 sm:mb-12 md:mb-16 group">
-                            <div class="absolute -left-4 sm:-left-6 top-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-neon-blue to-neon-purple rounded-full border-3 sm:border-4 border-white shadow-neon group-hover:scale-125 transition-all duration-500 animate-pulse-soft"></div>
-                            
-                            <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-glass hover-lift card-3d border border-white/20 group-hover:border-neon-blue/30 transition-all duration-500">
-                                <div class="flex flex-col sm:flex-row justify-between items-start mb-4 sm:mb-6 gap-3 sm:gap-0">
-                                    <div>
-                                        <h3 class="text-xl sm:text-2xl font-display font-bold text-slate-900 mb-2">Backend Developer</h3>
-                                        <p class="text-lg sm:text-xl font-semibold gradient-text-neon">VIFY COMPANY</p>
-                                    </div>
-                                    <span class="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold shadow-neon animate-glow flex-shrink-0">
+        <!-- Main Content with enhanced animations -->
+        <main class="lg:col-span-3 p-4 sm:p-6 md:p-8 space-y-8 sm:space-y-12 md:space-y-16 animate-slide-in-right order-1 lg:order-2">
+
+            <!-- Work Experience with enhanced timeline -->
+            <section class="space-y-6 sm:space-y-8">
+                <h2 class="text-2xl sm:text-3xl font-display font-bold text-slate-900 uppercase tracking-wider flex items-center gradient-text animate-fade-in">
+                    <i class="fas fa-briefcase text-neon-blue mr-3 sm:mr-4 text-xl sm:text-2xl"></i>
+                    Work Experience
+                </h2>
+
+                <div class="relative pl-6 sm:pl-8 timeline-line">
+
+                    <!-- Experience Item 1 - Enhanced with 3D and glass effects -->
+                    <div class="relative mb-10 sm:mb-12 md:mb-16 group">
+                        <div class="absolute -left-4 sm:-left-6 top-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-neon-blue to-neon-purple rounded-full border-3 sm:border-4 border-white shadow-neon group-hover:scale-125 transition-all duration-500 animate-pulse-soft"></div>
+
+                        <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-glass hover-lift card-3d border border-white/20 group-hover:border-neon-blue/30 transition-all duration-500">
+                            <div class="flex flex-col sm:flex-row justify-between items-start mb-4 sm:mb-6 gap-3 sm:gap-0">
+                                <div>
+                                    <h3 class="text-xl sm:text-2xl font-display font-bold text-slate-900 mb-2">Backend
+                                        Developer</h3>
+                                    <p class="text-lg sm:text-xl font-semibold gradient-text-neon">VIFY COMPANY</p>
+                                </div>
+                                <span class="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold shadow-neon animate-glow flex-shrink-0">
                                         Jan 2025 - Present
                                     </span>
+                            </div>
+
+                            <div class="space-y-4 sm:space-y-6 mb-4 sm:mb-6">
+                                <div class="glass-dark p-4 sm:p-6 rounded-xl">
+                                    <h4 class="font-bold text-slate-800 text-base sm:text-lg mb-2 sm:mb-3 gradient-text">
+                                        Google Shopping Feed (Jan 2025 - Present)</h4>
+                                    <p class="text-xs sm:text-sm text-slate-700 mb-2">Team size: 3 people</p>
+                                    <p class="text-xs sm:text-sm text-slate-700 mb-3 sm:mb-4">Shopify App project
+                                        integrated with Google Merchant Center to sync products from Shopify to Google
+                                        Shopping.</p>
                                 </div>
-                                
-                                <div class="space-y-4 sm:space-y-6 mb-4 sm:mb-6">
-                                    <div class="glass-dark p-4 sm:p-6 rounded-xl">
-                                        <h4 class="font-bold text-slate-800 text-base sm:text-lg mb-2 sm:mb-3 gradient-text">Google Shopping Feed (Jan 2025 - Present)</h4>
-                                        <p class="text-xs sm:text-sm text-slate-700 mb-2">Team size: 3 people</p>
-                                        <p class="text-xs sm:text-sm text-slate-700 mb-3 sm:mb-4">Shopify App project integrated with Google Merchant Center to sync products from Shopify to Google Shopping.</p>
-                                    </div>
-                                    
-                                    <div>
-                                        <h5 class="font-bold text-slate-800 text-xs mb-2 sm:mb-3 uppercase tracking-wide neon-text text-neon-blue">Backend Tech Stack:</h5>
-                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-2 text-xs text-slate-600 mb-3 sm:mb-4">
-                                            <div class="flex items-center"><i class="fas fa-check-circle text-neon-green mr-2"></i>Node.js + NestJS (TypeScript)</div>
-                                            <div class="flex items-center"><i class="fas fa-check-circle text-neon-green mr-2"></i>MongoDB + Mongoose ODM</div>
-                                            <div class="flex items-center"><i class="fas fa-check-circle text-neon-green mr-2"></i>Redis (caching & queues)</div>
-                                            <div class="flex items-center"><i class="fas fa-check-circle text-neon-green mr-2"></i>BullMQ job processing</div>
-                                            <div class="flex items-center"><i class="fas fa-check-circle text-neon-green mr-2"></i>Docker containerization</div>
+
+                                <div>
+                                    <h5 class="font-bold text-slate-800 text-xs mb-2 sm:mb-3 uppercase tracking-wide neon-text text-neon-blue">
+                                        Backend Tech Stack:</h5>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-2 text-xs text-slate-600 mb-3 sm:mb-4">
+                                        <div class="flex items-center"><i
+                                                class="fas fa-check-circle text-neon-green mr-2"></i>Node.js + NestJS
+                                            (TypeScript)
                                         </div>
-                                    </div>
-                                    
-                                    <div>
-                                        <h5 class="font-bold text-slate-800 text-xs mb-2 sm:mb-3 uppercase tracking-wide neon-text text-neon-purple">Key Features:</h5>
-                                        <div class="grid grid-cols-1 gap-1 text-xs text-slate-600 mb-3 sm:mb-4">
-                                            <div class="flex items-center"><i class="fas fa-star text-neon-orange mr-2"></i>Shopify App integration (OAuth, Webhooks, GraphQL API)</div>
-                                            <div class="flex items-center"><i class="fas fa-star text-neon-orange mr-2"></i>Google Shopping feeds management</div>
-                                            <div class="flex items-center"><i class="fas fa-star text-neon-orange mr-2"></i>Google Merchant Center API integration</div>
-                                            <div class="flex items-center"><i class="fas fa-star text-neon-orange mr-2"></i>Background job processing with queue system</div>
-                                            <div class="flex items-center"><i class="fas fa-star text-neon-orange mr-2"></i>Multi-language support</div>
-                                            <div class="flex items-center"><i class="fas fa-star text-neon-orange mr-2"></i>Real-time sync Shopify ↔ Google</div>
+                                        <div class="flex items-center"><i
+                                                class="fas fa-check-circle text-neon-green mr-2"></i>MongoDB + Mongoose
+                                            ODM
                                         </div>
-                                    </div>
-                                    
-                                    <div>
-                                        <h5 class="font-bold text-slate-800 text-xs mb-2 sm:mb-3 uppercase tracking-wide neon-text text-neon-pink">Architecture:</h5>
-                                        <div class="grid grid-cols-1 gap-1 text-xs text-slate-600">
-                                            <div class="flex items-center"><i class="fas fa-cog text-neon-blue mr-2"></i>Modular NestJS structure</div>
-                                            <div class="flex items-center"><i class="fas fa-cog text-neon-blue mr-2"></i>Repository pattern + Domain models</div>
-                                            <div class="flex items-center"><i class="fas fa-cog text-neon-blue mr-2"></i>Microservices approach with separate modules</div>
-                                            <div class="flex items-center"><i class="fas fa-cog text-neon-blue mr-2"></i>RESTful APIs + GraphQL integration</div>
-                                            <div class="flex items-center"><i class="fas fa-cog text-neon-blue mr-2"></i>Middleware for auth, validation, security</div>
+                                        <div class="flex items-center"><i
+                                                class="fas fa-check-circle text-neon-green mr-2"></i>Redis (caching &
+                                            queues)
+                                        </div>
+                                        <div class="flex items-center"><i
+                                                class="fas fa-check-circle text-neon-green mr-2"></i>BullMQ job
+                                            processing
+                                        </div>
+                                        <div class="flex items-center"><i
+                                                class="fas fa-check-circle text-neon-green mr-2"></i>Docker
+                                            containerization
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <div class="flex flex-wrap gap-1 sm:gap-2">
-                                    <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Node.js</span>
-                                    <span class="bg-gradient-to-r from-red-400 to-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">NestJS</span>
-                                    <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">TypeScript</span>
-                                    <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">MongoDB</span>
-                                    <span class="bg-gradient-to-r from-red-400 to-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Redis</span>
-                                    <span class="bg-gradient-to-r from-orange-400 to-orange-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">BullMQ</span>
-                                    <span class="bg-gradient-to-r from-purple-400 to-purple-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Google API</span>
-                                    <span class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Shopify API</span>
-                                    <span class="bg-gradient-to-r from-gray-400 to-gray-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Docker</span>
+
+                                <div>
+                                    <h5 class="font-bold text-slate-800 text-xs mb-2 sm:mb-3 uppercase tracking-wide neon-text text-neon-purple">
+                                        Key Features:</h5>
+                                    <div class="grid grid-cols-1 gap-1 text-xs text-slate-600 mb-3 sm:mb-4">
+                                        <div class="flex items-center"><i class="fas fa-star text-neon-orange mr-2"></i>Shopify
+                                            App integration (OAuth, Webhooks, GraphQL API)
+                                        </div>
+                                        <div class="flex items-center"><i class="fas fa-star text-neon-orange mr-2"></i>Google
+                                            Shopping feeds management
+                                        </div>
+                                        <div class="flex items-center"><i class="fas fa-star text-neon-orange mr-2"></i>Google
+                                            Merchant Center API integration
+                                        </div>
+                                        <div class="flex items-center"><i class="fas fa-star text-neon-orange mr-2"></i>Background
+                                            job processing with queue system
+                                        </div>
+                                        <div class="flex items-center"><i class="fas fa-star text-neon-orange mr-2"></i>Multi-language
+                                            support
+                                        </div>
+                                        <div class="flex items-center"><i class="fas fa-star text-neon-orange mr-2"></i>Real-time
+                                            sync Shopify ↔ Google
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h5 class="font-bold text-slate-800 text-xs mb-2 sm:mb-3 uppercase tracking-wide neon-text text-neon-pink">
+                                        Architecture:</h5>
+                                    <div class="grid grid-cols-1 gap-1 text-xs text-slate-600">
+                                        <div class="flex items-center"><i class="fas fa-cog text-neon-blue mr-2"></i>Modular
+                                            NestJS structure
+                                        </div>
+                                        <div class="flex items-center"><i class="fas fa-cog text-neon-blue mr-2"></i>Repository
+                                            pattern + Domain models
+                                        </div>
+                                        <div class="flex items-center"><i class="fas fa-cog text-neon-blue mr-2"></i>Microservices
+                                            approach with separate modules
+                                        </div>
+                                        <div class="flex items-center"><i class="fas fa-cog text-neon-blue mr-2"></i>RESTful
+                                            APIs + GraphQL integration
+                                        </div>
+                                        <div class="flex items-center"><i class="fas fa-cog text-neon-blue mr-2"></i>Middleware
+                                            for auth, validation, security
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Experience Item 2 -->
-                        <div class="relative mb-10 sm:mb-12 md:mb-16 group">
-                            <div class="absolute -left-4 sm:-left-6 top-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-neon-purple to-neon-pink rounded-full border-3 sm:border-4 border-white shadow-neon-purple group-hover:scale-125 transition-all duration-500 animate-pulse-soft"></div>
-                            
-                            <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-glass hover-lift card-3d border border-white/20 group-hover:border-neon-purple/30 transition-all duration-500">
-                                <div class="flex flex-col sm:flex-row justify-between items-start mb-4 sm:mb-6 gap-3 sm:gap-0">
-                                    <div>
-                                        <h3 class="text-xl sm:text-2xl font-display font-bold text-slate-900 mb-2">Backend Developer</h3>
-                                        <p class="text-lg sm:text-xl font-semibold gradient-text-neon">VIFY COMPANY</p>
-                                    </div>
-                                    <span class="bg-gradient-to-r from-neon-purple to-neon-pink text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold shadow-neon-purple flex-shrink-0">
+                            <div class="flex flex-wrap gap-1 sm:gap-2">
+                                <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Node.js</span>
+                                <span class="bg-gradient-to-r from-red-400 to-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">NestJS</span>
+                                <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">TypeScript</span>
+                                <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">MongoDB</span>
+                                <span class="bg-gradient-to-r from-red-400 to-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Redis</span>
+                                <span class="bg-gradient-to-r from-orange-400 to-orange-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">BullMQ</span>
+                                <span class="bg-gradient-to-r from-purple-400 to-purple-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Google API</span>
+                                <span class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Shopify API</span>
+                                <span class="bg-gradient-to-r from-gray-400 to-gray-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 2 -->
+                    <div class="relative mb-10 sm:mb-12 md:mb-16 group">
+                        <div class="absolute -left-4 sm:-left-6 top-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-neon-purple to-neon-pink rounded-full border-3 sm:border-4 border-white shadow-neon-purple group-hover:scale-125 transition-all duration-500 animate-pulse-soft"></div>
+
+                        <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-glass hover-lift card-3d border border-white/20 group-hover:border-neon-purple/30 transition-all duration-500">
+                            <div class="flex flex-col sm:flex-row justify-between items-start mb-4 sm:mb-6 gap-3 sm:gap-0">
+                                <div>
+                                    <h3 class="text-xl sm:text-2xl font-display font-bold text-slate-900 mb-2">Backend
+                                        Developer</h3>
+                                    <p class="text-lg sm:text-xl font-semibold gradient-text-neon">VIFY COMPANY</p>
+                                </div>
+                                <span class="bg-gradient-to-r from-neon-purple to-neon-pink text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold shadow-neon-purple flex-shrink-0">
                                         May 2023 - 2025
                                     </span>
-                                </div>
-                                
-                                <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 border-l-4 border-yellow-400 p-6 mb-6 rounded-xl">
-                                    <div class="flex items-center">
-                                        <i class="fas fa-star text-yellow-500 mr-3 text-xl animate-bounce-subtle"></i>
-                                        <span class="text-sm font-bold text-yellow-800">Achieved 4.8 star rating within one year!</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="space-y-6 mb-6">
-                                    <div class="glass-dark p-6 rounded-xl">
-                                        <h4 class="font-bold text-slate-800 text-lg mb-3 gradient-text">Gift Card (May 2023 - Present)</h4>
-                                        <p class="text-sm text-slate-700 mb-2">Team size: 2 people</p>
-                                        <p class="text-sm text-slate-700 mb-4">Gift card managed by Shopify App built on NestJS + TypeScript architecture, using MongoDB as main database.</p>
-                                    </div>
-                                    
-                                    <div>
-                                        <h5 class="font-bold text-slate-800 text-xs mb-3 uppercase tracking-wide neon-text text-neon-purple">Technical Skills Demonstrated:</h5>
-                                        <div class="grid grid-cols-2 gap-2 text-xs text-slate-600 mb-4">
-                                            <div class="flex items-center"><i class="fas fa-check-circle text-neon-green mr-2"></i>NestJS/Node.js with TypeScript</div>
-                                            <div class="flex items-center"><i class="fas fa-check-circle text-neon-green mr-2"></i>MongoDB design and optimization</div>
-                                            <div class="flex items-center"><i class="fas fa-check-circle text-neon-green mr-2"></i>Redis queue management</div>
-                                            <div class="flex items-center"><i class="fas fa-check-circle text-neon-green mr-2"></i>RabbitMQ message broker</div>
-                                            <div class="flex items-center"><i class="fas fa-check-circle text-neon-green mr-2"></i>AWS services (S3, SES) integration</div>
-                                            <div class="flex items-center"><i class="fas fa-check-circle text-neon-green mr-2"></i>Shopify API development</div>
-                                            <div class="flex items-center"><i class="fas fa-check-circle text-neon-green mr-2"></i>Docker containerization</div>
-                                            <div class="flex items-center"><i class="fas fa-check-circle text-neon-green mr-2"></i>GitLab CI/CD pipeline</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div>
-                                        <h5 class="font-bold text-slate-800 text-xs mb-3 uppercase tracking-wide neon-text text-neon-blue">Architecture Patterns:</h5>
-                                        <div class="grid grid-cols-1 gap-1 text-xs text-slate-600">
-                                            <div class="flex items-center"><i class="fas fa-cog text-neon-pink mr-2"></i>Microservices communication</div>
-                                            <div class="flex items-center"><i class="fas fa-cog text-neon-pink mr-2"></i>Event-driven programming</div>
-                                            <div class="flex items-center"><i class="fas fa-cog text-neon-pink mr-2"></i>Queue-based processing</div>
-                                            <div class="flex items-center"><i class="fas fa-cog text-neon-pink mr-2"></i>Modular monolith design</div>
-                                            <div class="flex items-center"><i class="fas fa-cog text-neon-pink mr-2"></i>Clean Architecture principles</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-gradient-to-r from-red-400 to-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">NestJS</span>
-                                    <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">TypeScript</span>
-                                    <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">MongoDB</span>
-                                    <span class="bg-gradient-to-r from-orange-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">RabbitMQ</span>
-                                    <span class="bg-gradient-to-r from-purple-400 to-purple-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">AWS</span>
-                                    <span class="bg-gradient-to-r from-indigo-400 to-indigo-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">GitLab CI/CD</span>
+                            </div>
+
+                            <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 border-l-4 border-yellow-400 p-6 mb-6 rounded-xl">
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-500 mr-3 text-xl animate-bounce-subtle"></i>
+                                    <span class="text-sm font-bold text-yellow-800">Achieved 4.8 star rating within one year!</span>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Additional experience items would follow the same pattern but I'll provide a condensed version for space -->
-                        
-                        <!-- Experience Item 3 - EPIS CLOUD -->
-                        <div class="relative mb-16 group">
-                            <div class="absolute -left-6 top-4 w-8 h-8 bg-gradient-to-br from-neon-green to-neon-blue rounded-full border-4 border-white shadow-neon group-hover:scale-125 transition-all duration-500 animate-pulse-soft"></div>
-                            
-                            <div class="glass p-8 rounded-2xl shadow-glass hover-lift card-3d border border-white/20 group-hover:border-neon-green/30 transition-all duration-500">
-                                <div class="flex justify-between items-start mb-6">
-                                    <div>
-                                        <h3 class="text-2xl font-display font-bold text-slate-900 mb-2">Backend Developer</h3>
-                                        <p class="text-xl font-semibold gradient-text-neon">EPIS CLOUD COMPANY</p>
+                            <div class="space-y-6 mb-6">
+                                <div class="glass-dark p-6 rounded-xl">
+                                    <h4 class="font-bold text-slate-800 text-lg mb-3 gradient-text">Gift Card (May 2023
+                                        - Present)</h4>
+                                    <p class="text-sm text-slate-700 mb-2">Team size: 2 people</p>
+                                    <p class="text-sm text-slate-700 mb-4">Gift card managed by Shopify App built on
+                                        NestJS + TypeScript architecture, using MongoDB as main database.</p>
+                                </div>
+
+                                <div>
+                                    <h5 class="font-bold text-slate-800 text-xs mb-3 uppercase tracking-wide neon-text text-neon-purple">
+                                        Technical Skills Demonstrated:</h5>
+                                    <div class="grid grid-cols-2 gap-2 text-xs text-slate-600 mb-4">
+                                        <div class="flex items-center"><i
+                                                class="fas fa-check-circle text-neon-green mr-2"></i>NestJS/Node.js with
+                                            TypeScript
+                                        </div>
+                                        <div class="flex items-center"><i
+                                                class="fas fa-check-circle text-neon-green mr-2"></i>MongoDB design and
+                                            optimization
+                                        </div>
+                                        <div class="flex items-center"><i
+                                                class="fas fa-check-circle text-neon-green mr-2"></i>Redis queue
+                                            management
+                                        </div>
+                                        <div class="flex items-center"><i
+                                                class="fas fa-check-circle text-neon-green mr-2"></i>RabbitMQ message
+                                            broker
+                                        </div>
+                                        <div class="flex items-center"><i
+                                                class="fas fa-check-circle text-neon-green mr-2"></i>AWS services (S3,
+                                            SES) integration
+                                        </div>
+                                        <div class="flex items-center"><i
+                                                class="fas fa-check-circle text-neon-green mr-2"></i>Shopify API
+                                            development
+                                        </div>
+                                        <div class="flex items-center"><i
+                                                class="fas fa-check-circle text-neon-green mr-2"></i>Docker
+                                            containerization
+                                        </div>
+                                        <div class="flex items-center"><i
+                                                class="fas fa-check-circle text-neon-green mr-2"></i>GitLab CI/CD
+                                            pipeline
+                                        </div>
                                     </div>
-                                    <span class="bg-gradient-to-r from-neon-green to-neon-blue text-white px-6 py-3 rounded-full text-sm font-bold shadow-neon">
+                                </div>
+
+                                <div>
+                                    <h5 class="font-bold text-slate-800 text-xs mb-3 uppercase tracking-wide neon-text text-neon-blue">
+                                        Architecture Patterns:</h5>
+                                    <div class="grid grid-cols-1 gap-1 text-xs text-slate-600">
+                                        <div class="flex items-center"><i class="fas fa-cog text-neon-pink mr-2"></i>Microservices
+                                            communication
+                                        </div>
+                                        <div class="flex items-center"><i class="fas fa-cog text-neon-pink mr-2"></i>Event-driven
+                                            programming
+                                        </div>
+                                        <div class="flex items-center"><i class="fas fa-cog text-neon-pink mr-2"></i>Queue-based
+                                            processing
+                                        </div>
+                                        <div class="flex items-center"><i class="fas fa-cog text-neon-pink mr-2"></i>Modular
+                                            monolith design
+                                        </div>
+                                        <div class="flex items-center"><i class="fas fa-cog text-neon-pink mr-2"></i>Clean
+                                            Architecture principles
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gradient-to-r from-red-400 to-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">NestJS</span>
+                                <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">TypeScript</span>
+                                <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">MongoDB</span>
+                                <span class="bg-gradient-to-r from-orange-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">RabbitMQ</span>
+                                <span class="bg-gradient-to-r from-purple-400 to-purple-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">AWS</span>
+                                <span class="bg-gradient-to-r from-indigo-400 to-indigo-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">GitLab CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional experience items would follow the same pattern but I'll provide a condensed version for space -->
+
+                    <!-- Experience Item 3 - TOMOSIA COMPANY -->
+                    <div class="relative mb-10 sm:mb-12 md:mb-16 group">
+                        <div class="absolute -left-4 sm:-left-6 top-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-neon-green to-neon-blue rounded-full border-3 sm:border-4 border-white shadow-neon group-hover:scale-125 transition-all duration-500 animate-pulse-soft"></div>
+
+                        <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-glass hover-lift card-3d border border-white/20 group-hover:border-neon-green/30 transition-all duration-500">
+                            <div class="flex flex-col sm:flex-row justify-between items-start mb-4 sm:mb-6 gap-3 sm:gap-0">
+                                <div>
+                                    <h3 class="text-xl sm:text-2xl font-display font-bold text-slate-900 mb-2">Backend
+                                        Developer</h3>
+                                    <p class="text-lg sm:text-xl font-semibold gradient-text-neon">TOMOSIA COMPANY</p>
+                                </div>
+                                <span class="bg-gradient-to-r from-neon-green to-neon-blue text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold shadow-neon flex-shrink-0">
+                                        Apr 2022 - Apr 2023
+                                    </span>
+                            </div>
+
+                            <div class="space-y-4 sm:space-y-6 mb-4 sm:mb-6">
+                                <!-- Multiple Projects -->
+                                <div class="grid grid-cols-1 gap-4">
+                                    <div class="glass-dark p-4 sm:p-6 rounded-xl">
+                                        <h4 class="font-bold text-slate-800 text-base sm:text-lg mb-2 sm:mb-3 gradient-text">
+                                            Onlineface.jp & Auto-academy.com (Oct 2022 - Apr 2023)</h4>
+                                        <p class="text-xs sm:text-sm text-slate-700 mb-2">Team size: 5 people</p>
+                                        <p class="text-xs sm:text-sm text-slate-700 mb-3 sm:mb-4">Learning to drive a
+                                            car, getting a license, using AI to check if the learning process is going
+                                            well</p>
+                                        <p class="text-xs sm:text-sm text-slate-700 mb-3 sm:mb-4">Project maintenance
+                                            refactor function</p>
+                                        <p class="text-xs sm:text-sm text-slate-600"><strong>Tech:</strong> PHP Laravel
+                                            8.0, ReactJS, Docker, AWS S3, EC2, MySQL, Azure</p>
+                                    </div>
+
+                                    <div class="glass-dark p-4 sm:p-6 rounded-xl">
+                                        <h4 class="font-bold text-slate-800 text-base sm:text-lg mb-2 sm:mb-3 gradient-text">
+                                            Bstudy.vn (Apr 2022 - Sep 2022)</h4>
+                                        <p class="text-xs sm:text-sm text-slate-700 mb-2">Team size: 5 people</p>
+                                        <p class="text-xs sm:text-sm text-slate-700 mb-3 sm:mb-4">App to learn English
+                                            for kids - Backend development</p>
+                                        <p class="text-xs sm:text-sm text-slate-600"><strong>Tech:</strong> PHP Laravel
+                                            8.0, Vue.js, Docker, AWS S3, EC2, MySQL, Flutter</p>
+                                    </div>
+
+                                    <div class="glass-dark p-4 sm:p-6 rounded-xl">
+                                        <h4 class="font-bold text-slate-800 text-base sm:text-lg mb-2 sm:mb-3 gradient-text">
+                                            Hada-lounge.com (Dec 2021 - Apr 2022)</h4>
+                                        <p class="text-xs sm:text-sm text-slate-700 mb-2">Team size: 6 people</p>
+                                        <p class="text-xs sm:text-sm text-slate-700 mb-3 sm:mb-4">Beauty services,
+                                            cosmetology, reservation trial, online examination</p>
+                                        <ul class="text-xs sm:text-sm text-slate-700 space-y-1 mb-3">
+                                            <li>• Develop and extend functionality</li>
+                                            <li>• Create notification job for multiple clinic users</li>
+                                            <li>• Export clinic member CSV by examination type</li>
+                                            <li>• Project maintenance and refactoring</li>
+                                        </ul>
+                                        <p class="text-xs sm:text-sm text-slate-600"><strong>Tech:</strong> PHP Laravel
+                                            8.0, Vue.js, Docker, AWS S3, EC2, MySQL</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-1 sm:gap-2">
+                                <span class="bg-gradient-to-r from-purple-400 to-purple-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">PHP</span>
+                                <span class="bg-gradient-to-r from-red-400 to-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Laravel</span>
+                                <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Vue.js</span>
+                                <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">ReactJS</span>
+                                <span class="bg-gradient-to-r from-gray-400 to-gray-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Docker</span>
+                                <span class="bg-gradient-to-r from-orange-400 to-orange-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">AWS</span>
+                                <span class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">MySQL</span>
+                                <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Azure</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 4 - GHMSOFT COMPANY -->
+                    <div class="relative mb-10 sm:mb-12 md:mb-16 group">
+                        <div class="absolute -left-4 sm:-left-6 top-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-orange-400 to-red-500 rounded-full border-3 sm:border-4 border-white shadow-neon group-hover:scale-125 transition-all duration-500 animate-pulse-soft"></div>
+
+                        <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-glass hover-lift card-3d border border-white/20 group-hover:border-orange-400/30 transition-all duration-500">
+                            <div class="flex flex-col sm:flex-row justify-between items-start mb-4 sm:mb-6 gap-3 sm:gap-0">
+                                <div>
+                                    <h3 class="text-xl sm:text-2xl font-display font-bold text-slate-900 mb-2">Node.js
+                                        Developer</h3>
+                                    <p class="text-lg sm:text-xl font-semibold gradient-text-neon">GHMSOFT COMPANY</p>
+                                </div>
+                                <span class="bg-gradient-to-r from-orange-400 to-red-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold shadow-neon flex-shrink-0">
+                                        Mar 2021 - Apr 2022
+                                    </span>
+                            </div>
+
+                            <div class="space-y-4 sm:space-y-6 mb-4 sm:mb-6">
+                                <div class="grid grid-cols-1 gap-4">
+                                    <div class="glass-dark p-4 sm:p-6 rounded-xl">
+                                        <h4 class="font-bold text-slate-800 text-base sm:text-lg mb-2 sm:mb-3 gradient-text">
+                                            Reos.vn (Mar 2021 - Sep 2021)</h4>
+                                        <p class="text-xs sm:text-sm text-slate-700 mb-2">Team size: 5 people</p>
+                                        <ul class="text-xs sm:text-sm text-slate-700 space-y-1 mb-3">
+                                            <li>• Stored, retrieved, and manipulated data</li>
+                                            <li>• Online payment integration (VNPAY)</li>
+                                            <li>• Modified existing software to correct errors</li>
+                                        </ul>
+                                        <p class="text-xs sm:text-sm text-slate-600"><strong>Tech:</strong> Node.js,
+                                            Express, PugJS, Docker, PM2, MySQL</p>
+                                    </div>
+
+                                    <div class="glass-dark p-4 sm:p-6 rounded-xl">
+                                        <h4 class="font-bold text-slate-800 text-base sm:text-lg mb-2 sm:mb-3 gradient-text">
+                                            Toyota_crm (Apr 2021 - Jul 2021)</h4>
+                                        <p class="text-xs sm:text-sm text-slate-700 mb-2">Team size: 3 people</p>
+                                        <ul class="text-xs sm:text-sm text-slate-700 space-y-1 mb-3">
+                                            <li>• Stored, retrieved, and manipulated data</li>
+                                            <li>• Modified existing software to correct errors</li>
+                                            <li>• Analyzed customer requirements</li>
+                                        </ul>
+                                        <p class="text-xs sm:text-sm text-slate-600"><strong>Tech:</strong> Node.js,
+                                            Express, Prisma, Docker, PM2, MySQL</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-1 sm:gap-2">
+                                <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Node.js</span>
+                                <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Express</span>
+                                <span class="bg-gradient-to-r from-purple-400 to-purple-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Prisma</span>
+                                <span class="bg-gradient-to-r from-gray-400 to-gray-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Docker</span>
+                                <span class="bg-gradient-to-r from-indigo-400 to-indigo-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">PM2</span>
+                                <span class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">MySQL</span>
+                                <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">PugJS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 5 - FREELANCER -->
+                    <div class="relative mb-10 sm:mb-12 md:mb-16 group">
+                        <div class="absolute -left-4 sm:-left-6 top-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full border-3 sm:border-4 border-white shadow-neon group-hover:scale-125 transition-all duration-500 animate-pulse-soft"></div>
+
+                        <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-glass hover-lift card-3d border border-white/20 group-hover:border-yellow-400/30 transition-all duration-500">
+                            <div class="flex flex-col sm:flex-row justify-between items-start mb-4 sm:mb-6 gap-3 sm:gap-0">
+                                <div>
+                                    <h3 class="text-xl sm:text-2xl font-display font-bold text-slate-900 mb-2">Node.js
+                                        Developer</h3>
+                                    <p class="text-lg sm:text-xl font-semibold gradient-text-neon">FREELANCER</p>
+                                </div>
+                                <span class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold shadow-neon flex-shrink-0">
+                                        Dec 2020 - Mar 2021
+                                    </span>
+                            </div>
+
+                            <div class="space-y-4 sm:space-y-6 mb-4 sm:mb-6">
+                                <div class="glass-dark p-4 sm:p-6 rounded-xl">
+                                    <p class="text-xs sm:text-sm text-slate-700 mb-2">Team size: 2 people</p>
+                                    <p class="text-xs sm:text-sm text-slate-700 mb-3 sm:mb-4">Freelance Node.js
+                                        development projects</p>
+                                    <p class="text-xs sm:text-sm text-slate-600"><strong>Tech:</strong> Node.js,
+                                        Express, Lambda functions, AWS S3, RabbitMQ, Docker, PostgreSQL</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-1 sm:gap-2">
+                                <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Node.js</span>
+                                <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Express</span>
+                                <span class="bg-gradient-to-r from-orange-400 to-orange-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">AWS Lambda</span>
+                                <span class="bg-gradient-to-r from-orange-400 to-orange-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">RabbitMQ</span>
+                                <span class="bg-gradient-to-r from-gray-400 to-gray-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Docker</span>
+                                <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 6 - IHR SOLUTION -->
+                    <div class="relative mb-10 sm:mb-12 md:mb-16 group">
+                        <div class="absolute -left-4 sm:-left-6 top-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full border-3 sm:border-4 border-white shadow-neon group-hover:scale-125 transition-all duration-500 animate-pulse-soft"></div>
+
+                        <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-glass hover-lift card-3d border border-white/20 group-hover:border-indigo-400/30 transition-all duration-500">
+                            <div class="flex flex-col sm:flex-row justify-between items-start mb-4 sm:mb-6 gap-3 sm:gap-0">
+                                <div>
+                                    <h3 class="text-xl sm:text-2xl font-display font-bold text-slate-900 mb-2">Node.js
+                                        Developer</h3>
+                                    <p class="text-lg sm:text-xl font-semibold gradient-text-neon">IHR SOLUTION
+                                        COMPANY</p>
+                                </div>
+                                <span class="bg-gradient-to-r from-indigo-400 to-purple-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold shadow-neon flex-shrink-0">
+                                        May 2020 - Dec 2020
+                                    </span>
+                            </div>
+
+                            <div class="space-y-4 sm:space-y-6 mb-4 sm:mb-6">
+                                <div class="glass-dark p-4 sm:p-6 rounded-xl">
+                                    <h4 class="font-bold text-slate-800 text-base sm:text-lg mb-2 sm:mb-3 gradient-text">
+                                        ITOKIN (May 2020 - Dec 2020)</h4>
+                                    <p class="text-xs sm:text-sm text-slate-700 mb-2">Team size: 4 people</p>
+                                    <ul class="text-xs sm:text-sm text-slate-700 space-y-1 mb-3">
+                                        <li>• Tool to support automatic connection on LinkedIn</li>
+                                        <li>• Background task to automatically connect people</li>
+                                        <li>• Design API to mark system version</li>
+                                    </ul>
+                                    <p class="text-xs sm:text-sm text-slate-600"><strong>Tech:</strong> Node.js,
+                                        Express, MongoDB, Docker</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-1 sm:gap-2">
+                                <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Node.js</span>
+                                <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Express</span>
+                                <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">MongoDB</span>
+                                <span class="bg-gradient-to-r from-gray-400 to-gray-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 7 - EPIS CLOUD -->
+                    <div class="relative mb-10 sm:mb-12 md:mb-16 group">
+                        <div class="absolute -left-4 sm:-left-6 top-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-full border-3 sm:border-4 border-white shadow-neon group-hover:scale-125 transition-all duration-500 animate-pulse-soft"></div>
+
+                        <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-glass hover-lift card-3d border border-white/20 group-hover:border-teal-400/30 transition-all duration-500">
+                            <div class="flex flex-col sm:flex-row justify-between items-start mb-4 sm:mb-6 gap-3 sm:gap-0">
+                                <div>
+                                    <h3 class="text-xl sm:text-2xl font-display font-bold text-slate-900 mb-2">Backend
+                                        Developer</h3>
+                                    <p class="text-lg sm:text-xl font-semibold gradient-text-neon">EPIS CLOUD
+                                        COMPANY</p>
+                                </div>
+                                <span class="bg-gradient-to-r from-teal-400 to-cyan-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold shadow-neon flex-shrink-0">
                                         Sep 2022 - Apr 2023
                                     </span>
+                            </div>
+
+                            <div class="space-y-4 sm:space-y-6 mb-4 sm:mb-6">
+                                <div class="glass-dark p-4 sm:p-6 rounded-xl">
+                                    <h4 class="font-bold text-slate-800 text-base sm:text-lg mb-2 sm:mb-3 gradient-text">
+                                        Payment-Donate (Sep 2022 - Apr 2023)</h4>
+                                    <p class="text-xs sm:text-sm text-slate-700 mb-2">Team size: 4 people</p>
+                                    <p class="text-xs sm:text-sm text-slate-700 mb-3 sm:mb-4">Messages listen and
+                                        display in live stream</p>
+                                    <ul class="text-xs sm:text-sm text-slate-700 space-y-1 mb-3">
+                                        <li>• Listen when streamer is donated money, display that message on live
+                                            stream
+                                        </li>
+                                        <li>• Website that allows users to donate to live streamers on the live
+                                            streaming platform
+                                        </li>
+                                    </ul>
+                                    <p class="text-xs sm:text-sm text-slate-600"><strong>Tech:</strong> Node.js,
+                                        Socket.io, Vue.js, MongoDB, MySQL</p>
                                 </div>
-                                
-                                <div class="space-y-4 mb-6">
-                                    <div class="glass-dark p-6 rounded-xl">
-                                        <h4 class="font-bold text-slate-800 text-base mb-3 gradient-text">Payment-Donate - Live Stream Messaging System</h4>
-                                        <ul class="text-sm text-slate-700 space-y-2 ml-4 list-none">
-                                            <li class="flex items-center"><i class="fas fa-users text-neon-blue mr-3"></i>Team size: 4 people</li>
-                                            <li class="flex items-center"><i class="fas fa-broadcast-tower text-neon-purple mr-3"></i>Listen when streamer receives donations, display messages in live stream</li>
-                                            <li class="flex items-center"><i class="fas fa-donate text-neon-pink mr-3"></i>Website allowing users to donate to live streamers</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Node.js</span>
-                                    <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Socket.io</span>
-                                    <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Vue.js</span>
-                                    <span class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">MongoDB</span>
-                                    <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">MySQL</span>
-                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-1 sm:gap-2">
+                                <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Node.js</span>
+                                <span class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Socket.io</span>
+                                <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">Vue.js</span>
+                                <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">MongoDB</span>
+                                <span class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-neon hover:scale-110 transition-transform duration-200">MySQL</span>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <!-- Key Achievements with 3D cards -->
-                <section class="space-y-6 sm:space-y-8">
-                    <h2 class="text-2xl sm:text-3xl font-display font-bold text-slate-900 uppercase tracking-wider flex items-center gradient-text">
-                        <i class="fas fa-trophy text-neon-orange mr-3 sm:mr-4 text-xl sm:text-2xl animate-bounce-subtle"></i>
-                        Key Achievements
-                    </h2>
-                    
-                    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
-                        <!-- Achievement 1 -->
-                        <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border-l-4 border-yellow-400 shadow-glass hover-lift card-3d animate-fade-in">
-                            <div class="flex items-center mb-3 sm:mb-4">
-                                <i class="fas fa-star text-yellow-500 text-2xl sm:text-3xl mr-3 sm:mr-4 animate-pulse-soft"></i>
-                                <h3 class="text-lg sm:text-xl font-display font-bold text-slate-900 gradient-text">4.8 Star App Rating</h3>
-                            </div>
-                            <p class="text-xs sm:text-sm text-slate-600 mb-2 sm:mb-3 font-semibold">Gift Card Shopify App - 2024</p>
-                            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                                Achieved 4.8-star rating within one year of development using clean architecture and microservices.
-                            </p>
-                        </div>
+            <!-- Key Achievements with 3D cards -->
+            <section class="space-y-6 sm:space-y-8">
+                <h2 class="text-2xl sm:text-3xl font-display font-bold text-slate-900 uppercase tracking-wider flex items-center gradient-text">
+                    <i class="fas fa-trophy text-neon-orange mr-3 sm:mr-4 text-xl sm:text-2xl animate-bounce-subtle"></i>
+                    Key Achievements
+                </h2>
 
-                        <!-- Achievement 2 -->
-                        <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border-l-4 border-blue-400 shadow-glass hover-lift card-3d animate-fade-in">
-                            <div class="flex items-center mb-3 sm:mb-4">
-                                <i class="fas fa-cogs text-blue-500 text-2xl sm:text-3xl mr-3 sm:mr-4 animate-pulse-soft"></i>
-                                <h3 class="text-lg sm:text-xl font-display font-bold text-slate-900 gradient-text">Microservices Expert</h3>
-                            </div>
-                            <p class="text-xs sm:text-sm text-slate-600 mb-2 sm:mb-3 font-semibold">VIFY Company - 2023-2025</p>
-                            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                                Successfully implemented microservices architecture and event-driven programming for large-scale projects.
-                            </p>
+                <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+                    <!-- Achievement 1 -->
+                    <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border-l-4 border-yellow-400 shadow-glass hover-lift card-3d animate-fade-in">
+                        <div class="flex items-center mb-3 sm:mb-4">
+                            <i class="fas fa-star text-yellow-500 text-2xl sm:text-3xl mr-3 sm:mr-4 animate-pulse-soft"></i>
+                            <h3 class="text-lg sm:text-xl font-display font-bold text-slate-900 gradient-text">4.8 Star
+                                App Rating</h3>
                         </div>
-
-                        <!-- Achievement 3 -->
-                        <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border-l-4 border-green-400 shadow-glass hover-lift card-3d animate-fade-in">
-                            <div class="flex items-center mb-3 sm:mb-4">
-                                <i class="fas fa-users text-green-500 text-2xl sm:text-3xl mr-3 sm:mr-4 animate-pulse-soft"></i>
-                                <h3 class="text-lg sm:text-xl font-display font-bold text-slate-900 gradient-text">Team Leadership</h3>
-                            </div>
-                            <p class="text-xs sm:text-sm text-slate-600 mb-2 sm:mb-3 font-semibold">Multiple Projects - 2021-2025</p>
-                            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                                Led and mentored development teams across various projects, managing teams of 2-6 developers.
-                            </p>
-                        </div>
-
-                        <!-- Achievement 4 -->
-                        <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border-l-4 border-purple-400 shadow-glass hover-lift card-3d animate-fade-in">
-                            <div class="flex items-center mb-3 sm:mb-4">
-                                <i class="fas fa-globe text-purple-500 text-2xl sm:text-3xl mr-3 sm:mr-4 animate-pulse-soft"></i>
-                                <h3 class="text-lg sm:text-xl font-display font-bold text-slate-900 gradient-text">Multi-Domain Expertise</h3>
-                            </div>
-                            <p class="text-xs sm:text-sm text-slate-600 mb-2 sm:mb-3 font-semibold">Various Industries - 2020-2025</p>
-                            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                                Extensive experience developing applications across multiple domains: E-commerce, Healthcare, Education, Automotive.
-                            </p>
-                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2 sm:mb-3 font-semibold">Gift Card Shopify App -
+                            2024</p>
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                            Achieved 4.8-star rating within one year of development using clean architecture and
+                            microservices.
+                        </p>
                     </div>
-                </section>
-            </main>
-        </div>
+
+                    <!-- Achievement 2 -->
+                    <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border-l-4 border-blue-400 shadow-glass hover-lift card-3d animate-fade-in">
+                        <div class="flex items-center mb-3 sm:mb-4">
+                            <i class="fas fa-cogs text-blue-500 text-2xl sm:text-3xl mr-3 sm:mr-4 animate-pulse-soft"></i>
+                            <h3 class="text-lg sm:text-xl font-display font-bold text-slate-900 gradient-text">
+                                Microservices Expert</h3>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2 sm:mb-3 font-semibold">VIFY Company -
+                            2023-2025</p>
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                            Successfully implemented microservices architecture and event-driven programming for
+                            large-scale projects.
+                        </p>
+                    </div>
+
+                    <!-- Achievement 3 -->
+                    <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border-l-4 border-green-400 shadow-glass hover-lift card-3d animate-fade-in">
+                        <div class="flex items-center mb-3 sm:mb-4">
+                            <i class="fas fa-users text-green-500 text-2xl sm:text-3xl mr-3 sm:mr-4 animate-pulse-soft"></i>
+                            <h3 class="text-lg sm:text-xl font-display font-bold text-slate-900 gradient-text">Team
+                                Leadership</h3>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2 sm:mb-3 font-semibold">Multiple Projects -
+                            2021-2025</p>
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                            Led and mentored development teams across various projects, managing teams of 2-6
+                            developers.
+                        </p>
+                    </div>
+
+                    <!-- Achievement 4 -->
+                    <div class="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border-l-4 border-purple-400 shadow-glass hover-lift card-3d animate-fade-in">
+                        <div class="flex items-center mb-3 sm:mb-4">
+                            <i class="fas fa-globe text-purple-500 text-2xl sm:text-3xl mr-3 sm:mr-4 animate-pulse-soft"></i>
+                            <h3 class="text-lg sm:text-xl font-display font-bold text-slate-900 gradient-text">
+                                Multi-Domain Expertise</h3>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2 sm:mb-3 font-semibold">Various Industries -
+                            2020-2025</p>
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                            Extensive experience developing applications across multiple domains: E-commerce,
+                            Healthcare, Education, Automotive.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
+</div>
 
-    <!-- Enhanced footer with gradient -->
-    <footer class="text-center py-12 text-slate-500 text-sm print:hidden relative">
-        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/5 via-neon-purple/5 to-neon-pink/5 blur-3xl"></div>
-        <div class="relative z-10">
-            <p class="font-display font-semibold">© 2025 TO ANH TU - Backend Developer</p>
-        </div>
-    </footer>
+<!-- Enhanced footer with gradient -->
+<footer class="text-center py-12 text-slate-500 text-sm print:hidden relative">
+    <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/5 via-neon-purple/5 to-neon-pink/5 blur-3xl"></div>
+    <div class="relative z-10">
+        <p class="font-display font-semibold">© 2025 TO ANH TU - Backend Developer</p>
+    </div>
+</footer>
 
-    <script>
-        // Enhanced interactive effects and animations
-        document.addEventListener('DOMContentLoaded', function() {
-            // Enhanced intersection observer for animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
+<script>
+    // Enhanced interactive effects and animations
+    document.addEventListener('DOMContentLoaded', function () {
+        // Enhanced intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-fade-in');
-                        // Add stagger effect
-                        const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 100;
-                        entry.target.style.animationDelay = `${delay}ms`;
-                    }
-                });
-            }, observerOptions);
-
-            // Observe all timeline items and achievement cards
-            document.querySelectorAll('.timeline-line > div, .grid > div').forEach(item => {
-                observer.observe(item);
-            });
-
-            // Enhanced hover effects for skill tags (desktop and touch)
-            document.querySelectorAll('.rounded-full').forEach(tag => {
-                // Mouse events for desktop
-                tag.addEventListener('mouseenter', function() {
-                    if (!('ontouchstart' in window)) {
-                        this.style.transform = 'scale(1.1) translateY(-2px)';
-                        this.style.boxShadow = '0 10px 25px rgba(0, 217, 255, 0.3)';
-                    }
-                });
-                
-                tag.addEventListener('mouseleave', function() {
-                    if (!('ontouchstart' in window)) {
-                        this.style.transform = 'scale(1) translateY(0)';
-                        this.style.boxShadow = '';
-                    }
-                });
-
-                // Touch events for mobile
-                tag.addEventListener('touchstart', function() {
-                    this.style.transform = 'scale(1.05)';
-                    this.style.transition = 'transform 0.1s ease';
-                });
-
-                tag.addEventListener('touchend', function() {
-                    this.style.transform = 'scale(1)';
-                    setTimeout(() => {
-                        this.style.transition = '';
-                    }, 100);
-                });
-            });
-
-            // Interactive contact items with enhanced effects
-            document.querySelectorAll('.glass-dark.cursor-pointer').forEach(item => {
-                item.addEventListener('click', function() {
-                    const text = this.textContent.trim();
-                    this.classList.add('animate-pulse');
-                    setTimeout(() => {
-                        this.classList.remove('animate-pulse');
-                    }, 1000);
-
-                    if (text.includes('@')) {
-                        window.open(`mailto:${text.split(' ').pop()}`, '_blank');
-                    } else if (text.includes('0966069045')) {
-                        window.open(`tel:${text.split(' ').pop()}`, '_blank');
-                    }
-                });
-            });
-
-            // Parallax effect for background elements
-            window.addEventListener('scroll', function() {
-                const scrolled = window.pageYOffset;
-                const parallaxElements = document.querySelectorAll('.animate-float');
-                
-                parallaxElements.forEach(element => {
-                    const speed = 0.5;
-                    element.style.transform = `translateY(${scrolled * speed}px)`;
-                });
-            });
-
-            // Enhanced keyboard shortcuts
-            document.addEventListener('keydown', function(e) {
-                if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
-                    e.preventDefault();
-                    window.print();
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    // Add stagger effect
+                    const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 100;
+                    entry.target.style.animationDelay = `${delay}ms`;
                 }
-                
-                // Easter egg: Konami code for extra animations
-                if (e.code === 'KeyK' && e.ctrlKey) {
-                    document.body.classList.add('animate-pulse');
-                    setTimeout(() => {
-                        document.body.classList.remove('animate-pulse');
-                    }, 2000);
+            });
+        }, observerOptions);
+
+        // Observe all timeline items and achievement cards
+        document.querySelectorAll('.timeline-line > div, .grid > div').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Enhanced hover effects for skill tags (desktop and touch)
+        document.querySelectorAll('.rounded-full').forEach(tag => {
+            // Mouse events for desktop
+            tag.addEventListener('mouseenter', function () {
+                if (!('ontouchstart' in window)) {
+                    this.style.transform = 'scale(1.1) translateY(-2px)';
+                    this.style.boxShadow = '0 10px 25px rgba(0, 217, 255, 0.3)';
                 }
             });
 
-            // Dynamic gradient animation
-            let gradientAngle = 0;
-            setInterval(() => {
-                gradientAngle = (gradientAngle + 1) % 360;
-                document.documentElement.style.setProperty('--gradient-angle', `${gradientAngle}deg`);
-            }, 50);
-
-            // Mouse trail effect (optional - can be enabled)
-            let mouseTrail = [];
-            document.addEventListener('mousemove', function(e) {
-                mouseTrail.push({x: e.clientX, y: e.clientY, time: Date.now()});
-                
-                // Clean up old trail points
-                mouseTrail = mouseTrail.filter(point => Date.now() - point.time < 1000);
+            tag.addEventListener('mouseleave', function () {
+                if (!('ontouchstart' in window)) {
+                    this.style.transform = 'scale(1) translateY(0)';
+                    this.style.boxShadow = '';
+                }
             });
 
-            // Mobile navigation toggle
-            const mobileToggle = document.getElementById('mobile-nav-toggle');
-            const sidebar = document.getElementById('sidebar');
-            let sidebarVisible = true;
+            // Touch events for mobile
+            tag.addEventListener('touchstart', function () {
+                this.style.transform = 'scale(1.05)';
+                this.style.transition = 'transform 0.1s ease';
+            });
 
-            if (mobileToggle) {
-                mobileToggle.addEventListener('click', function() {
-                    if (window.innerWidth < 1024) { // Only on mobile/tablet
-                        sidebarVisible = !sidebarVisible;
-                        if (sidebarVisible) {
-                            sidebar.classList.remove('hidden');
-                            sidebar.classList.add('block');
-                            this.innerHTML = '<i class="fas fa-times"></i>';
-                        } else {
-                            sidebar.classList.add('hidden');
-                            sidebar.classList.remove('block');
-                            this.innerHTML = '<i class="fas fa-bars"></i>';
-                        }
-                    }
-                });
-            }
+            tag.addEventListener('touchend', function () {
+                this.style.transform = 'scale(1)';
+                setTimeout(() => {
+                    this.style.transition = '';
+                }, 100);
+            });
+        });
 
-            // Handle window resize
-            window.addEventListener('resize', function() {
-                if (window.innerWidth >= 1024) {
-                    // Desktop view - ensure sidebar is visible
-                    sidebar.classList.remove('hidden');
-                    sidebar.classList.add('block');
-                    if (mobileToggle) mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                    sidebarVisible = true;
-                } else if (window.innerWidth < 1024 && !sidebarVisible) {
-                    // Mobile view - keep sidebar hidden if it was hidden
-                    sidebar.classList.add('hidden');
-                    sidebar.classList.remove('block');
+        // Interactive contact items with enhanced effects
+        document.querySelectorAll('.glass-dark.cursor-pointer').forEach(item => {
+            item.addEventListener('click', function () {
+                const text = this.textContent.trim();
+                this.classList.add('animate-pulse');
+                setTimeout(() => {
+                    this.classList.remove('animate-pulse');
+                }, 1000);
+
+                if (text.includes('@')) {
+                    window.open(`mailto:${text.split(' ').pop()}`, '_blank');
+                } else if (text.includes('0966069045')) {
+                    window.open(`tel:${text.split(' ').pop()}`, '_blank');
                 }
             });
         });
 
-        // Enhanced print functionality
-        function printCV() {
-            // Add print styles dynamically
-            const printStyles = `
+        // Parallax effect for background elements
+        window.addEventListener('scroll', function () {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.animate-float');
+
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Enhanced keyboard shortcuts
+        document.addEventListener('keydown', function (e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                window.print();
+            }
+
+            // Easter egg: Konami code for extra animations
+            if (e.code === 'KeyK' && e.ctrlKey) {
+                document.body.classList.add('animate-pulse');
+                setTimeout(() => {
+                    document.body.classList.remove('animate-pulse');
+                }, 2000);
+            }
+        });
+
+        // Dynamic gradient animation
+        let gradientAngle = 0;
+        setInterval(() => {
+            gradientAngle = (gradientAngle + 1) % 360;
+            document.documentElement.style.setProperty('--gradient-angle', `${gradientAngle}deg`);
+        }, 50);
+
+        // Mouse trail effect (optional - can be enabled)
+        let mouseTrail = [];
+        document.addEventListener('mousemove', function (e) {
+            mouseTrail.push({x: e.clientX, y: e.clientY, time: Date.now()});
+
+            // Clean up old trail points
+            mouseTrail = mouseTrail.filter(point => Date.now() - point.time < 1000);
+        });
+
+        // Mobile navigation toggle
+        const mobileToggle = document.getElementById('mobile-nav-toggle');
+        const sidebar = document.getElementById('sidebar');
+        let sidebarVisible = true;
+
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', function () {
+                if (window.innerWidth < 1024) { // Only on mobile/tablet
+                    sidebarVisible = !sidebarVisible;
+                    if (sidebarVisible) {
+                        sidebar.classList.remove('hidden');
+                        sidebar.classList.add('block');
+                        this.innerHTML = '<i class="fas fa-times"></i>';
+                    } else {
+                        sidebar.classList.add('hidden');
+                        sidebar.classList.remove('block');
+                        this.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', function () {
+            if (window.innerWidth >= 1024) {
+                // Desktop view - ensure sidebar is visible
+                sidebar.classList.remove('hidden');
+                sidebar.classList.add('block');
+                if (mobileToggle) mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                sidebarVisible = true;
+            } else if (window.innerWidth < 1024 && !sidebarVisible) {
+                // Mobile view - keep sidebar hidden if it was hidden
+                sidebar.classList.add('hidden');
+                sidebar.classList.remove('block');
+            }
+        });
+    });
+
+    // Enhanced print functionality
+    function printCV() {
+        // Add print styles dynamically
+        const printStyles = `
                 @media print {
                     .glass { background: white !important; }
                     .shadow-neon { box-shadow: none !important; }
                     .animate-pulse-soft { animation: none !important; }
                 }
             `;
-            const styleSheet = document.createElement('style');
-            styleSheet.textContent = printStyles;
-            document.head.appendChild(styleSheet);
-            
-            window.print();
-            
-            // Remove print styles after printing
-            setTimeout(() => {
-                document.head.removeChild(styleSheet);
-            }, 1000);
-        }
-    </script>
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = printStyles;
+        document.head.appendChild(styleSheet);
+
+        window.print();
+
+        // Remove print styles after printing
+        setTimeout(() => {
+            document.head.removeChild(styleSheet);
+        }, 1000);
+    }
+</script>
 </body>
 </html>
