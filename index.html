@@ -52,16 +52,16 @@
                         }
                     },
                     animation: {
-                        'fade-in': 'fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
-                        'slide-in-left': 'slideInLeft 1s cubic-bezier(0.4, 0, 0.2, 1)',
-                        'slide-in-right': 'slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1)',
-                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
-                        'float': 'float 4s ease-in-out infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate',
-                        'typing': 'typing 3s steps(30) infinite',
-                        'shimmer': 'shimmer 2.5s linear infinite',
-                        'kinetic': 'kinetic 8s ease-in-out infinite',
-                        'bounce-subtle': 'bounceSubtle 2s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-in-left': 'slideInLeft 0.7s ease-out',
+                        'slide-in-right': 'slideInRight 0.7s ease-out',
+                        'pulse-soft': 'pulseSoft 2.5s ease-out infinite',
+                        'float': 'float 3s ease-out infinite',
+                        'glow': 'glow 1.8s ease-out infinite alternate',
+                        'typing': 'typing 2.5s steps(25) infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'kinetic': 'kinetic 6s ease-out infinite',
+                        'bounce-subtle': 'bounceSubtle 1.8s ease-out infinite',
                     },
                     backgroundImage: {
                         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -85,7 +85,7 @@
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -96,7 +96,7 @@
         @keyframes slideInLeft {
             from {
                 opacity: 0;
-                transform: translateX(-50px);
+                transform: translateX(-25px);
             }
             to {
                 opacity: 1;
@@ -107,7 +107,7 @@
         @keyframes slideInRight {
             from {
                 opacity: 0;
-                transform: translateX(50px);
+                transform: translateX(25px);
             }
             to {
                 opacity: 1;
@@ -121,8 +121,8 @@
                 opacity: 1;
             }
             50% {
-                transform: scale(1.05);
-                opacity: 0.8;
+                transform: scale(1.03);
+                opacity: 0.85;
             }
         }
 
@@ -131,16 +131,16 @@
                 transform: translateY(0px);
             }
             50% {
-                transform: translateY(-10px);
+                transform: translateY(-6px);
             }
         }
 
         @keyframes glow {
             from {
-                box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+                box-shadow: 0 0 15px rgba(0, 217, 255, 0.2);
             }
             to {
-                box-shadow: 0 0 30px rgba(0, 217, 255, 0.4), 0 0 40px rgba(176, 132, 255, 0.2);
+                box-shadow: 0 0 25px rgba(0, 217, 255, 0.3), 0 0 35px rgba(176, 132, 255, 0.15);
             }
         }
 
@@ -185,7 +185,7 @@
                 transform: translateY(0);
             }
             50% {
-                transform: translateY(-5px);
+                transform: translateY(-4px);
             }
         }
 
@@ -250,22 +250,22 @@
 
         /* Interactive hover effects */
         .hover-lift {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
         }
 
         .hover-lift:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-5px) scale(1.015);
+            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.08), 0 8px 8px -5px rgba(0, 0, 0, 0.03);
         }
 
         /* 3D card effect */
         .card-3d {
             transform-style: preserve-3d;
-            transition: transform 0.6s;
+            transition: transform 0.4s ease-out;
         }
 
         .card-3d:hover {
-            transform: rotateX(5deg) rotateY(5deg);
+            transform: rotateX(3deg) rotateY(3deg);
         }
 
         /* Custom scrollbar */
@@ -314,21 +314,41 @@
             scrollbar-color: #00d9ff rgba(255, 255, 255, 0.1);
         }
 
-        /* Mobile optimizations */
+        /* Performance optimizations for different screen sizes */
         @media (max-width: 768px) {
-            /* Better touch targets */
-            .hover-lift:hover {
-                transform: translateY(-4px) scale(1.01);
+            /* Disable performance-heavy animations on mobile */
+            .animate-glow,
+            .animate-kinetic,
+            .animate-shimmer {
+                animation: none !important;
             }
 
-            /* Disable some animations on mobile for performance */
-            .animate-glow {
-                animation: none;
+            /* Reduce complex animations */
+            .animate-pulse-soft {
+                animation-duration: 3s;
+            }
+
+            .animate-float {
+                animation-duration: 4s;
+                transform: none !important;
+            }
+
+            /* Better touch targets */
+            .hover-lift:hover {
+                transform: translateY(-2px) scale(1.01);
             }
 
             /* Reduce blur effects on mobile */
             .backdrop-blur-xl {
-                backdrop-filter: blur(10px);
+                backdrop-filter: blur(8px);
+            }
+
+            .glass {
+                backdrop-filter: blur(12px);
+            }
+
+            .glass-dark {
+                backdrop-filter: blur(12px);
             }
 
             /* Adjust scrollable container height for mobile */
@@ -341,6 +361,13 @@
                 width: 4px;
             }
 
+            /* Hide decorative shadows on mobile */
+            .shadow-neon,
+            .shadow-neon-purple,
+            .shadow-glass {
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+            }
+
             /* Hide some decorative elements on very small screens */
             @media (max-width: 480px) {
                 .animate-float, .animate-pulse-soft {
@@ -351,6 +378,22 @@
                 .custom-scrollbar {
                     max-height: 65vh !important;
                 }
+
+                /* Remove mesh gradient on very small screens */
+                .bg-mesh-gradient {
+                    opacity: 0.1;
+                }
+            }
+        }
+
+        /* Performance optimization for users who prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.1s !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.1s !important;
             }
         }
 
@@ -1244,58 +1287,53 @@
 <script>
     // Enhanced interactive effects and animations
     document.addEventListener('DOMContentLoaded', function () {
-        // Enhanced intersection observer for animations
+        // Optimized intersection observer for animations
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.2,
+            rootMargin: '0px 0px -80px 0px'
         };
 
         const observer = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                    // Add stagger effect
-                    const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 100;
-                    entry.target.style.animationDelay = `${delay}ms`;
+                if (entry.isIntersecting && !entry.target.classList.contains('animate-fade-in')) {
+                    // Only animate if user doesn't prefer reduced motion
+                    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                        entry.target.classList.add('animate-fade-in');
+                        // Reduced stagger effect for better performance
+                        const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 60;
+                        entry.target.style.animationDelay = `${delay}ms`;
+                    }
+                    // Stop observing after animation is triggered
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        // Observe all timeline items and achievement cards
-        document.querySelectorAll('.timeline-line > div, .grid > div').forEach(item => {
+        // Only observe timeline items, skip achievements for better performance
+        document.querySelectorAll('.timeline-line > div').forEach(item => {
             observer.observe(item);
         });
 
-        // Enhanced hover effects for skill tags (desktop and touch)
-        document.querySelectorAll('.rounded-full').forEach(tag => {
-            // Mouse events for desktop
-            tag.addEventListener('mouseenter', function () {
-                if (!('ontouchstart' in window)) {
-                    this.style.transform = 'scale(1.1) translateY(-2px)';
-                    this.style.boxShadow = '0 10px 25px rgba(0, 217, 255, 0.3)';
-                }
-            });
+        // Optimized hover effects for skill tags
+        if (window.innerWidth > 768) {
+            document.querySelectorAll('.rounded-full').forEach(tag => {
+                // Only add hover effects on desktop for better performance
+                tag.addEventListener('mouseenter', function () {
+                    if (!('ontouchstart' in window)) {
+                        this.style.transform = 'scale(1.08) translateY(-1px)';
+                        this.style.transition = 'transform 0.2s ease-out';
+                        this.style.boxShadow = '0 6px 15px rgba(0, 217, 255, 0.25)';
+                    }
+                });
 
-            tag.addEventListener('mouseleave', function () {
-                if (!('ontouchstart' in window)) {
-                    this.style.transform = 'scale(1) translateY(0)';
-                    this.style.boxShadow = '';
-                }
+                tag.addEventListener('mouseleave', function () {
+                    if (!('ontouchstart' in window)) {
+                        this.style.transform = 'scale(1) translateY(0)';
+                        this.style.boxShadow = '';
+                    }
+                });
             });
-
-            // Touch events for mobile
-            tag.addEventListener('touchstart', function () {
-                this.style.transform = 'scale(1.05)';
-                this.style.transition = 'transform 0.1s ease';
-            });
-
-            tag.addEventListener('touchend', function () {
-                this.style.transform = 'scale(1)';
-                setTimeout(() => {
-                    this.style.transition = '';
-                }, 100);
-            });
-        });
+        }
 
         // Interactive contact items with enhanced effects
         document.querySelectorAll('.glass-dark.cursor-pointer').forEach(item => {
@@ -1314,16 +1352,26 @@
             });
         });
 
-        // Parallax effect for background elements
-        window.addEventListener('scroll', function () {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.animate-float');
+        // Optimized parallax effect for desktop only
+        if (window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            let ticking = false;
+            
+            window.addEventListener('scroll', function () {
+                if (!ticking) {
+                    requestAnimationFrame(function() {
+                        const scrolled = window.pageYOffset;
+                        const parallaxElements = document.querySelectorAll('.animate-float');
 
-            parallaxElements.forEach(element => {
-                const speed = 0.5;
-                element.style.transform = `translateY(${scrolled * speed}px)`;
+                        parallaxElements.forEach(element => {
+                            const speed = 0.3; // Reduced for better performance
+                            element.style.transform = `translateY(${scrolled * speed}px)`;
+                        });
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
             });
-        });
+        }
 
         // Enhanced keyboard shortcuts
         document.addEventListener('keydown', function (e) {
@@ -1379,21 +1427,16 @@
             scrollContainer.setAttribute('tabindex', '0');
         }
 
-        // Dynamic gradient animation
-        let gradientAngle = 0;
-        setInterval(() => {
-            gradientAngle = (gradientAngle + 1) % 360;
-            document.documentElement.style.setProperty('--gradient-angle', `${gradientAngle}deg`);
-        }, 50);
+        // Optimized dynamic gradient animation (desktop only)
+        if (window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            let gradientAngle = 0;
+            setInterval(() => {
+                gradientAngle = (gradientAngle + 1) % 360;
+                document.documentElement.style.setProperty('--gradient-angle', `${gradientAngle}deg`);
+            }, 100); // Reduced frequency for better performance
+        }
 
-        // Mouse trail effect (optional - can be enabled)
-        let mouseTrail = [];
-        document.addEventListener('mousemove', function (e) {
-            mouseTrail.push({x: e.clientX, y: e.clientY, time: Date.now()});
-
-            // Clean up old trail points
-            mouseTrail = mouseTrail.filter(point => Date.now() - point.time < 1000);
-        });
+        // Mouse trail removed for better performance
 
         // Mobile navigation toggle
         const mobileToggle = document.getElementById('mobile-nav-toggle');
