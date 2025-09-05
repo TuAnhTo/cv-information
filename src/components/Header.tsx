@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
@@ -94,81 +94,81 @@ const Header: React.FC = () => {
           </div>
 
           {/* Contact Info */}
-          {/*<div className="flex flex-col sm:flex-row flex-wrap items-center gap-3 sm:gap-4 md:gap-6 text-slate-300">*/}
-          {/*  {[*/}
-          {/*    {*/}
-          {/*      icon: "fas fa-phone",*/}
-          {/*      text: "0966069045",*/}
-          {/*      variant: "default" as const,*/}
-          {/*    },*/}
-          {/*    {*/}
-          {/*      icon: "fas fa-envelope",*/}
-          {/*      text: "toanhtu.98@gmail.com",*/}
-          {/*      variant: "secondary" as const,*/}
-          {/*    },*/}
-          {/*    {*/}
-          {/*      icon: "fas fa-map-marker-alt",*/}
-          {/*      text: "Ha Hoa, Phu Tho, Vietnam",*/}
-          {/*      variant: "outline" as const,*/}
-          {/*    },*/}
-          {/*  ].map((item, index) => (*/}
-          {/*    <ContactButton key={index} {...item} />*/}
-          {/*  ))}*/}
-          {/*</div>*/}
+          <div className="flex flex-col sm:flex-row flex-wrap items-center gap-3 sm:gap-4 md:gap-6 text-slate-300">
+            {/*{[*/}
+            {/*  {*/}
+            {/*    icon: "fas fa-phone",*/}
+            {/*    text: "0966069045",*/}
+            {/*    variant: "default" as const,*/}
+            {/*  },*/}
+            {/*  {*/}
+            {/*    icon: "fas fa-envelope",*/}
+            {/*    text: "toanhtu.98@gmail.com",*/}
+            {/*    variant: "secondary" as const,*/}
+            {/*  },*/}
+            {/*  {*/}
+            {/*    icon: "fas fa-map-marker-alt",*/}
+            {/*    text: "Ha Hoa, Phu Tho, Vietnam",*/}
+            {/*    variant: "outline" as const,*/}
+            {/*  },*/}
+            {/*].map((item, index) => (*/}
+            {/*  <ContactButton key={index} {...item} />*/}
+            {/*))}*/}
+          </div>
         </motion.div>
       </div>
     </motion.header>
   );
 };
 
-const ContactButton: React.FC<{
-  icon: string;
-  text: string;
-  variant: "default" | "secondary" | "outline";
-}> = ({ icon, text, variant }) => {
-  const prefersReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
-
-  const handleClick = () => {
-    if (text.includes("@")) {
-      window.open(`mailto:${text}`, "_blank");
-    } else if (text.includes("096")) {
-      window.open(`tel:${text}`, "_blank");
-    }
-  };
-
-  return (
-    <TooltipProvider>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <motion.div
-            whileHover={prefersReducedMotion ? {} : { scale: 1.02 }}
-            whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
-            style={{ willChange: prefersReducedMotion ? "auto" : "transform" }}
-          >
-            <Button
-              variant={variant}
-              onClick={handleClick}
-              className="text-sm sm:text-base gap-3 hover:bg-white/10 transition-colors duration-200"
-            >
-              <i className={icon} />
-              <span className="font-medium">{text}</span>
-            </Button>
-          </motion.div>
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>
-            {text.includes("@")
-              ? "Send email"
-              : text.includes("096")
-              ? "Call phone"
-              : "View location"}
-          </p>
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
-  );
-};
+// const ContactButton: React.FC<{
+//   icon: string;
+//   text: string;
+//   variant: "default" | "secondary" | "outline";
+// }> = ({ icon, text, variant }) => {
+//   const prefersReducedMotion = window.matchMedia(
+//     "(prefers-reduced-motion: reduce)"
+//   ).matches;
+//
+//   const handleClick = () => {
+//     if (text.includes("@")) {
+//       window.open(`mailto:${text}`, "_blank");
+//     } else if (text.includes("096")) {
+//       window.open(`tel:${text}`, "_blank");
+//     }
+//   };
+//
+//   return (
+//     <TooltipProvider>
+//       <Tooltip>
+//         <TooltipTrigger asChild>
+//           <motion.div
+//             whileHover={prefersReducedMotion ? {} : { scale: 1.02 }}
+//             whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
+//             style={{ willChange: prefersReducedMotion ? "auto" : "transform" }}
+//           >
+//             <Button
+//               variant={variant}
+//               onClick={handleClick}
+//               className="text-sm sm:text-base gap-3 hover:bg-white/10 transition-colors duration-200"
+//             >
+//               <i className={icon} />
+//               <span className="font-medium">{text}</span>
+//             </Button>
+//           </motion.div>
+//         </TooltipTrigger>
+//         <TooltipContent>
+//           <p>
+//             {text.includes("@")
+//               ? "Send email"
+//               : text.includes("096")
+//               ? "Call phone"
+//               : "View location"}
+//           </p>
+//         </TooltipContent>
+//       </Tooltip>
+//     </TooltipProvider>
+//   );
+// };
 
 export default Header;
