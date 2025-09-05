@@ -18,15 +18,15 @@ const WorkExperience: React.FC = () => {
         <div className="relative pl-6 sm:pl-8 timeline-line">
           <ExperienceItem
             company=""
-            position="Backend Developer"
+            position="Team Lead / Backend Developer"
             period="Jan 2025 - Present"
             colorScheme="from-cyan-400 to-purple-500"
             projects={[
               {
                 title: "Google Shopping Feed (Jan 2025 - Present)",
-                teamSize: "3 people",
+                teamSize: "Leading team of 3 people",
                 description:
-                  "Shopify App project integrated with Google Merchant Center to sync products from Shopify to Google Shopping.",
+                  "Leading development of Shopify App project integrated with Google Merchant Center to sync products from Shopify to Google Shopping. Responsible for technical architecture decisions, code reviews, and team coordination.",
                 techStack: [
                   "Node.js + NestJS (TypeScript)",
                   "MongoDB + Mongoose ODM",
@@ -43,6 +43,8 @@ const WorkExperience: React.FC = () => {
                   "Sharding strategy for large-scale data distribution",
                 ],
                 features: [
+                  "Leading team technical planning and sprint coordination",
+                  "Code review and mentoring junior developers",
                   "Shopify App integration (OAuth, Webhooks, GraphQL API)",
                   "Google Shopping feeds management",
                   "Google Merchant Center API integration",
@@ -74,16 +76,16 @@ const WorkExperience: React.FC = () => {
 
           <ExperienceItem
             company=""
-            position="Backend Developer"
+            position="Team Lead / Backend Developer"
             period="May 2023 - 2025"
             colorScheme="from-purple-500 to-pink-400"
             achievement="Achieved 4.8 star rating within one year!"
             projects={[
               {
                 title: "Gift Card (May 2023 - Present)",
-                teamSize: "2 people",
+                teamSize: "Leading team of 2-4 people",
                 description:
-                  "Gift card management Shopify App built with NestJS + TypeScript architecture, using MongoDB as the main database.",
+                  "Leading development of gift card management Shopify App built with NestJS + TypeScript architecture, using MongoDB as the main database. Managing team coordination, technical decisions, and project delivery timelines.",
                 techStack: [
                   "NestJS/Node.js with TypeScript",
                   "MongoDB design and optimization",
@@ -102,6 +104,13 @@ const WorkExperience: React.FC = () => {
                   "Time-series design for transaction history tracking",
                   "Data archiving strategy for expired gift cards",
                   "MongoDB aggregation for revenue reporting and analytics",
+                ],
+                leadership: [
+                  "Team management and coordination (2-4 developers)",
+                  "Technical mentoring and code review processes",
+                  "Sprint planning and task distribution",
+                  "Cross-functional collaboration with product and design teams",
+                  "Performance monitoring and team development",
                 ],
                 architecture: [
                   "Microservices communication",
@@ -333,6 +342,7 @@ interface Project {
   techStack?: string[];
   databaseDesign?: string[];
   features?: string[];
+  leadership?: string[];
   architecture?: string[];
   tags: string[];
 }
@@ -449,6 +459,15 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
         items={project.features}
         icon="fas fa-star"
         color="text-orange-400"
+      />
+    )}
+
+    {project.leadership && (
+      <SkillSection
+        title="Leadership & Team Management:"
+        items={project.leadership}
+        icon="fas fa-users"
+        color="text-indigo-400"
       />
     )}
 

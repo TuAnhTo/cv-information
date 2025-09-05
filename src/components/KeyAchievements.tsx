@@ -23,7 +23,7 @@ const KeyAchievements: React.FC = () => {
     {
       icon: "fas fa-cogs",
       title: "Microservices",
-      subtitle: "VIFY Company - 2023-2025",
+      subtitle: "2023-2025",
       description:
         "Successfully implemented microservices architecture and event-driven programming for large-scale projects.",
       color: "border-blue-400",
@@ -32,9 +32,9 @@ const KeyAchievements: React.FC = () => {
     {
       icon: "fas fa-users",
       title: "Team Leadership",
-      subtitle: "Multiple Projects - 2021-2025",
+      subtitle: "Team Lead - 2023-2025",
       description:
-        "Led and mentored development teams across various projects, managing teams of 2-6 developers.",
+        "Successfully led development teams of 2-4 people across multiple projects, providing technical mentorship, conducting code reviews, and coordinating sprint planning and delivery.",
       color: "border-green-400",
       iconColor: "text-green-500",
     },
