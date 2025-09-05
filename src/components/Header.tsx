@@ -94,27 +94,27 @@ const Header: React.FC = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="flex flex-col sm:flex-row flex-wrap items-center gap-3 sm:gap-4 md:gap-6 text-slate-300">
-            {[
-              {
-                icon: "fas fa-phone",
-                text: "0966069045",
-                variant: "default" as const,
-              },
-              {
-                icon: "fas fa-envelope",
-                text: "toanhtu.98@gmail.com",
-                variant: "secondary" as const,
-              },
-              {
-                icon: "fas fa-map-marker-alt",
-                text: "Ha Hoa, Phu Tho, Vietnam",
-                variant: "outline" as const,
-              },
-            ].map((item, index) => (
-              <ContactButton key={index} {...item} />
-            ))}
-          </div>
+          {/*<div className="flex flex-col sm:flex-row flex-wrap items-center gap-3 sm:gap-4 md:gap-6 text-slate-300">*/}
+          {/*  {[*/}
+          {/*    {*/}
+          {/*      icon: "fas fa-phone",*/}
+          {/*      text: "0966069045",*/}
+          {/*      variant: "default" as const,*/}
+          {/*    },*/}
+          {/*    {*/}
+          {/*      icon: "fas fa-envelope",*/}
+          {/*      text: "toanhtu.98@gmail.com",*/}
+          {/*      variant: "secondary" as const,*/}
+          {/*    },*/}
+          {/*    {*/}
+          {/*      icon: "fas fa-map-marker-alt",*/}
+          {/*      text: "Ha Hoa, Phu Tho, Vietnam",*/}
+          {/*      variant: "outline" as const,*/}
+          {/*    },*/}
+          {/*  ].map((item, index) => (*/}
+          {/*    <ContactButton key={index} {...item} />*/}
+          {/*  ))}*/}
+          {/*</div>*/}
         </motion.div>
       </div>
     </motion.header>

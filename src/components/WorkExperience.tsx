@@ -17,7 +17,7 @@ const WorkExperience: React.FC = () => {
       <div className="max-h-[85vh] overflow-y-auto pr-2 custom-scrollbar relative">
         <div className="relative pl-6 sm:pl-8 timeline-line">
           <ExperienceItem
-            company="VIFY COMPANY"
+            company=""
             position="Backend Developer"
             period="Jan 2025 - Present"
             colorScheme="from-cyan-400 to-purple-500"
@@ -33,6 +33,14 @@ const WorkExperience: React.FC = () => {
                   "Redis (caching & queues)",
                   "BullMQ job processing",
                   "Docker containerization",
+                ],
+                databaseDesign: [
+                  "MongoDB schema design for product feeds with optimized indexing",
+                  "Collections design: Products, Feeds, GoogleMerchant, SyncLogs",
+                  "Compound indexes for multi-field queries (shopId + status + updatedAt)",
+                  "TTL indexes for automatic cleanup of temporary data",
+                  "Aggregation pipelines for complex reporting and analytics",
+                  "Sharding strategy for large-scale data distribution",
                 ],
                 features: [
                   "Shopify App integration (OAuth, Webhooks, GraphQL API)",
@@ -65,7 +73,7 @@ const WorkExperience: React.FC = () => {
           />
 
           <ExperienceItem
-            company="VIFY COMPANY"
+            company=""
             position="Backend Developer"
             period="May 2023 - 2025"
             colorScheme="from-purple-500 to-pink-400"
@@ -85,6 +93,15 @@ const WorkExperience: React.FC = () => {
                   "Shopify API development",
                   "Docker containerization",
                   "GitLab CI/CD pipeline",
+                ],
+                databaseDesign: [
+                  "MongoDB schema design for Gift Card system with optimized performance",
+                  "Collections: GiftCards, Transactions, Customers, Templates, Analytics",
+                  "Embedded vs Referenced documents strategy for gift card transactions",
+                  "Index optimization for gift card lookup by code (unique + sparse)",
+                  "Time-series design for transaction history tracking",
+                  "Data archiving strategy for expired gift cards",
+                  "MongoDB aggregation for revenue reporting and analytics",
                 ],
                 architecture: [
                   "Microservices communication",
@@ -106,7 +123,7 @@ const WorkExperience: React.FC = () => {
           />
 
           <ExperienceItem
-            company="EPIS CLOUD COMPANY"
+            company=""
             position="Backend Developer"
             period="Sep 2022 - Apr 2023"
             colorScheme="from-teal-400 to-cyan-500"
@@ -120,13 +137,21 @@ const WorkExperience: React.FC = () => {
                   "Real-time listener for donation events, displaying messages on live streams",
                   "Website platform enabling users to donate to live streamers with interactive features",
                 ],
+                databaseDesign: [
+                  "MySQL relational database for user management and donation tracking",
+                  "MongoDB for real-time messages and streaming data",
+                  "Hybrid database architecture (MySQL + MongoDB)",
+                  "Database normalization for user profiles and payment records",
+                  "Real-time data sync between MySQL transactions and MongoDB events",
+                  "Indexing strategy for fast donation lookup and streamer analytics",
+                ],
                 tags: ["Node.js", "Socket.io", "Vue.js", "MongoDB", "MySQL"],
               },
             ]}
           />
 
           <ExperienceItem
-            company="TOMOSIA COMPANY"
+            company=""
             position="Backend Developer"
             period="Apr 2022 - Apr 2023"
             colorScheme="from-green-400 to-cyan-400"
@@ -136,6 +161,13 @@ const WorkExperience: React.FC = () => {
                 teamSize: "5 people",
                 description:
                   "AI-powered driving education platform for license acquisition with intelligent progress tracking. Project maintenance and code refactoring",
+                databaseDesign: [
+                  "MySQL database optimization for user progress tracking",
+                  "Relational schema design for courses, lessons, and user progress",
+                  "Performance optimization with proper indexing on user_id and course_id",
+                  "Database migration and refactoring for improved query performance",
+                  "Data archiving strategy for completed courses and user activities",
+                ],
                 tags: [
                   "PHP",
                   "Laravel",
@@ -166,6 +198,13 @@ const WorkExperience: React.FC = () => {
                 teamSize: "6 people",
                 description:
                   "Beauty services platform with cosmetic consultations, appointment booking, and online assessments",
+                databaseDesign: [
+                  "MySQL relational database design for beauty clinic management",
+                  "Normalized schema for appointments, customers, treatments, and staff",
+                  "Database optimization for appointment scheduling queries",
+                  "Foreign key constraints ensuring data integrity across clinic operations",
+                  "Query optimization for CSV export functionality",
+                ],
                 features: [
                   "Developed and extended platform functionality",
                   "Created notification system for multiple clinic users",
@@ -178,7 +217,7 @@ const WorkExperience: React.FC = () => {
           />
 
           <ExperienceItem
-            company="GHMSOFT COMPANY"
+            company=""
             position="Node.js Developer"
             period="Mar 2021 - Apr 2022"
             colorScheme="from-orange-400 to-red-500"
@@ -186,6 +225,13 @@ const WorkExperience: React.FC = () => {
               {
                 title: "Reos.vn (Mar 2021 - Sep 2021)",
                 teamSize: "5 people",
+                databaseDesign: [
+                  "MySQL database management and optimization for e-commerce platform",
+                  "Schema design for product catalog, orders, and payment transactions",
+                  "Database indexing for improved query performance on product searches",
+                  "Data integrity constraints for payment processing workflows",
+                  "Database backup and recovery strategy implementation",
+                ],
                 features: [
                   "Database management and data manipulation",
                   "Online payment gateway integration (VNPAY)",
@@ -196,6 +242,13 @@ const WorkExperience: React.FC = () => {
               {
                 title: "Toyota_crm (Apr 2021 - Jul 2021)",
                 teamSize: "3 people",
+                databaseDesign: [
+                  "MySQL database design for customer relationship management system",
+                  "Prisma ORM integration for type-safe database operations",
+                  "Relational schema design for customers, leads, and sales pipeline",
+                  "Database performance optimization for CRM dashboard queries",
+                  "Data migration scripts for legacy Toyota customer data",
+                ],
                 features: [
                   "Database management and data operations",
                   "Software debugging and error correction",
@@ -214,7 +267,7 @@ const WorkExperience: React.FC = () => {
           />
 
           <ExperienceItem
-            company="FREELANCER"
+            company=""
             position="Node.js Developer"
             period="Dec 2020 - Mar 2021"
             colorScheme="from-yellow-400 to-orange-500"
@@ -223,6 +276,13 @@ const WorkExperience: React.FC = () => {
                 teamSize: "2 people",
                 description:
                   "Freelance Node.js development projects for various clients",
+                databaseDesign: [
+                  "PostgreSQL database design for serverless applications",
+                  "Schema optimization for AWS Lambda cold start performance",
+                  "Connection pooling strategy for PostgreSQL with Lambda",
+                  "Database migration scripts for client projects",
+                  "Message queue database design with RabbitMQ integration",
+                ],
                 tags: [
                   "Node.js",
                   "Express",
@@ -236,7 +296,7 @@ const WorkExperience: React.FC = () => {
           />
 
           <ExperienceItem
-            company="IHR SOLUTION COMPANY"
+            company=""
             position="Node.js Developer"
             period="May 2020 - Dec 2020"
             colorScheme="from-indigo-400 to-purple-500"
@@ -244,6 +304,13 @@ const WorkExperience: React.FC = () => {
               {
                 title: "ITOKIN (May 2020 - Dec 2020)",
                 teamSize: "4 people",
+                databaseDesign: [
+                  "MongoDB schema design for LinkedIn automation and contact management",
+                  "Document structure optimization for user profiles and connection data",
+                  "Indexing strategy for efficient contact search and filtering",
+                  "Background job queue storage in MongoDB collections",
+                  "Data retention policies for automated connection tracking",
+                ],
                 features: [
                   "LinkedIn automation tool for professional networking",
                   "Background task system for automated connections",
@@ -264,6 +331,7 @@ interface Project {
   teamSize: string;
   description?: string;
   techStack?: string[];
+  databaseDesign?: string[];
   features?: string[];
   architecture?: string[];
   tags: string[];
@@ -363,6 +431,15 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
         items={project.techStack}
         icon="fas fa-check-circle"
         color="text-green-400"
+      />
+    )}
+
+    {project.databaseDesign && (
+      <SkillSection
+        title="Database Design:"
+        items={project.databaseDesign}
+        icon="fas fa-database"
+        color="text-purple-400"
       />
     )}
 
